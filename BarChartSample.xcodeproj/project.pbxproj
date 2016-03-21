@@ -9,23 +9,181 @@
 /* Begin PBXBuildFile section */
 		5CE55B6C1C9BF3FF00BA3071 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B6B1C9BF3FF00BA3071 /* main.m */; };
 		5CE55B6F1C9BF3FF00BA3071 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B6E1C9BF3FF00BA3071 /* AppDelegate.m */; };
-		5CE55B721C9BF3FF00BA3071 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B711C9BF3FF00BA3071 /* ViewController.m */; };
 		5CE55B751C9BF3FF00BA3071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55B731C9BF3FF00BA3071 /* Main.storyboard */; };
 		5CE55B771C9BF3FF00BA3071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55B761C9BF3FF00BA3071 /* Assets.xcassets */; };
 		5CE55B7A1C9BF3FF00BA3071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55B781C9BF3FF00BA3071 /* LaunchScreen.storyboard */; };
+		5CE55B831C9BF47000BA3071 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B821C9BF47000BA3071 /* Test.swift */; };
+		5CE55B931C9BFAFE00BA3071 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE55B8C1C9BF97800BA3071 /* Charts.framework */; };
+		5CE55B941C9BFAFE00BA3071 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CE55B8C1C9BF97800BA3071 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5CE55BD91C9BFD1D00BA3071 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B9A1C9BFD1C00BA3071 /* BalloonMarker.swift */; };
+		5CE55BDA1C9BFD1D00BA3071 /* MyCustomXValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B9C1C9BFD1C00BA3071 /* MyCustomXValueFormatter.m */; };
+		5CE55BDB1C9BFD1D00BA3071 /* DemoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55B9E1C9BFD1C00BA3071 /* DemoBaseViewController.m */; };
+		5CE55BDC1C9BFD1D00BA3071 /* DemoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BA01C9BFD1C00BA3071 /* DemoListViewController.m */; };
+		5CE55BDD1C9BFD1D00BA3071 /* DemoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BA11C9BFD1C00BA3071 /* DemoListViewController.xib */; };
+		5CE55BDE1C9BFD1D00BA3071 /* AnotherBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BA41C9BFD1D00BA3071 /* AnotherBarChartViewController.m */; };
+		5CE55BDF1C9BFD1D00BA3071 /* AnotherBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BA51C9BFD1D00BA3071 /* AnotherBarChartViewController.xib */; };
+		5CE55BE01C9BFD1D00BA3071 /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BA71C9BFD1D00BA3071 /* BarChartViewController.m */; };
+		5CE55BE11C9BFD1D00BA3071 /* BarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BA81C9BFD1D00BA3071 /* BarChartViewController.xib */; };
+		5CE55BE21C9BFD1D00BA3071 /* BubbleChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BAA1C9BFD1D00BA3071 /* BubbleChartViewController.m */; };
+		5CE55BE31C9BFD1D00BA3071 /* BubbleChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BAB1C9BFD1D00BA3071 /* BubbleChartViewController.xib */; };
+		5CE55BE41C9BFD1D00BA3071 /* CandleStickChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BAD1C9BFD1D00BA3071 /* CandleStickChartViewController.m */; };
+		5CE55BE51C9BFD1D00BA3071 /* CandleStickChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BAE1C9BFD1D00BA3071 /* CandleStickChartViewController.xib */; };
+		5CE55BE61C9BFD1D00BA3071 /* ColoredLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BB01C9BFD1D00BA3071 /* ColoredLineChartViewController.m */; };
+		5CE55BE71C9BFD1D00BA3071 /* ColoredLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BB11C9BFD1D00BA3071 /* ColoredLineChartViewController.xib */; };
+		5CE55BE81C9BFD1D00BA3071 /* CombinedChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BB31C9BFD1D00BA3071 /* CombinedChartViewController.m */; };
+		5CE55BE91C9BFD1D00BA3071 /* CombinedChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BB41C9BFD1D00BA3071 /* CombinedChartViewController.xib */; };
+		5CE55BEA1C9BFD1D00BA3071 /* CubicLineChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BB61C9BFD1D00BA3071 /* CubicLineChartViewController.m */; };
+		5CE55BEB1C9BFD1D00BA3071 /* CubicLineChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BB71C9BFD1D00BA3071 /* CubicLineChartViewController.xib */; };
+		5CE55BEC1C9BFD1D00BA3071 /* HorizontalBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BB91C9BFD1D00BA3071 /* HorizontalBarChartViewController.m */; };
+		5CE55BED1C9BFD1D00BA3071 /* HorizontalBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BBA1C9BFD1D00BA3071 /* HorizontalBarChartViewController.xib */; };
+		5CE55BEE1C9BFD1D00BA3071 /* LineChart1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BBC1C9BFD1D00BA3071 /* LineChart1ViewController.m */; };
+		5CE55BEF1C9BFD1D00BA3071 /* LineChart1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BBD1C9BFD1D00BA3071 /* LineChart1ViewController.xib */; };
+		5CE55BF01C9BFD1D00BA3071 /* LineChart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BBF1C9BFD1D00BA3071 /* LineChart2ViewController.m */; };
+		5CE55BF11C9BFD1D00BA3071 /* LineChart2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BC01C9BFD1D00BA3071 /* LineChart2ViewController.xib */; };
+		5CE55BF21C9BFD1D00BA3071 /* MultipleBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BC21C9BFD1D00BA3071 /* MultipleBarChartViewController.m */; };
+		5CE55BF31C9BFD1D00BA3071 /* MultipleBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BC31C9BFD1D00BA3071 /* MultipleBarChartViewController.xib */; };
+		5CE55BF41C9BFD1D00BA3071 /* MultipleLinesChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BC51C9BFD1D00BA3071 /* MultipleLinesChartViewController.m */; };
+		5CE55BF51C9BFD1D00BA3071 /* MultipleLinesChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BC61C9BFD1D00BA3071 /* MultipleLinesChartViewController.xib */; };
+		5CE55BF61C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BC81C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.m */; };
+		5CE55BF71C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BC91C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.xib */; };
+		5CE55BF81C9BFD1D00BA3071 /* PieChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BCB1C9BFD1D00BA3071 /* PieChartViewController.m */; };
+		5CE55BF91C9BFD1D00BA3071 /* PieChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BCC1C9BFD1D00BA3071 /* PieChartViewController.xib */; };
+		5CE55BFA1C9BFD1D00BA3071 /* RadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BCE1C9BFD1D00BA3071 /* RadarChartViewController.m */; };
+		5CE55BFB1C9BFD1D00BA3071 /* RadarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BCF1C9BFD1D00BA3071 /* RadarChartViewController.xib */; };
+		5CE55BFC1C9BFD1D00BA3071 /* ScatterChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BD11C9BFD1D00BA3071 /* ScatterChartViewController.m */; };
+		5CE55BFD1C9BFD1D00BA3071 /* ScatterChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BD21C9BFD1D00BA3071 /* ScatterChartViewController.xib */; };
+		5CE55BFE1C9BFD1D00BA3071 /* SinusBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BD41C9BFD1D00BA3071 /* SinusBarChartViewController.m */; };
+		5CE55BFF1C9BFD1D00BA3071 /* SinusBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BD51C9BFD1D00BA3071 /* SinusBarChartViewController.xib */; };
+		5CE55C001C9BFD1D00BA3071 /* StackedBarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE55BD71C9BFD1D00BA3071 /* StackedBarChartViewController.m */; };
+		5CE55C011C9BFD1D00BA3071 /* StackedBarChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE55BD81C9BFD1D00BA3071 /* StackedBarChartViewController.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5CE55B8B1C9BF97800BA3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		5CE55B8D1C9BF97800BA3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		5CE55B8F1C9BF97800BA3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65B3F5BF1C7370BE000983D0;
+			remoteInfo = "Charts-OSX";
+		};
+		5CE55B911C9BF97800BA3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		5CE55B951C9BFAFE00BA3071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5CE55B971C9BFAFF00BA3071 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5CE55B941C9BFAFE00BA3071 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5CE55B671C9BF3FF00BA3071 /* BarChartSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarChartSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE55B6B1C9BF3FF00BA3071 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5CE55B6D1C9BF3FF00BA3071 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5CE55B6E1C9BF3FF00BA3071 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5CE55B701C9BF3FF00BA3071 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5CE55B711C9BF3FF00BA3071 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5CE55B741C9BF3FF00BA3071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CE55B761C9BF3FF00BA3071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CE55B791C9BF3FF00BA3071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CE55B7B1C9BF3FF00BA3071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE55B811C9BF47000BA3071 /* BarChartSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BarChartSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		5CE55B821C9BF47000BA3071 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = BarChartSample/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		5CE55B9A1C9BFD1C00BA3071 /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		5CE55B9B1C9BFD1C00BA3071 /* MyCustomXValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomXValueFormatter.h; sourceTree = "<group>"; };
+		5CE55B9C1C9BFD1C00BA3071 /* MyCustomXValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomXValueFormatter.m; sourceTree = "<group>"; };
+		5CE55B9D1C9BFD1C00BA3071 /* DemoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoBaseViewController.h; sourceTree = "<group>"; };
+		5CE55B9E1C9BFD1C00BA3071 /* DemoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoBaseViewController.m; sourceTree = "<group>"; };
+		5CE55B9F1C9BFD1C00BA3071 /* DemoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoListViewController.h; sourceTree = "<group>"; };
+		5CE55BA01C9BFD1C00BA3071 /* DemoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoListViewController.m; sourceTree = "<group>"; };
+		5CE55BA11C9BFD1C00BA3071 /* DemoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoListViewController.xib; sourceTree = "<group>"; };
+		5CE55BA31C9BFD1D00BA3071 /* AnotherBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnotherBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BA41C9BFD1D00BA3071 /* AnotherBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnotherBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BA51C9BFD1D00BA3071 /* AnotherBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnotherBarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BA61C9BFD1D00BA3071 /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BA71C9BFD1D00BA3071 /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BA81C9BFD1D00BA3071 /* BarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BA91C9BFD1D00BA3071 /* BubbleChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleChartViewController.h; sourceTree = "<group>"; };
+		5CE55BAA1C9BFD1D00BA3071 /* BubbleChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleChartViewController.m; sourceTree = "<group>"; };
+		5CE55BAB1C9BFD1D00BA3071 /* BubbleChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BubbleChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BAC1C9BFD1D00BA3071 /* CandleStickChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandleStickChartViewController.h; sourceTree = "<group>"; };
+		5CE55BAD1C9BFD1D00BA3071 /* CandleStickChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandleStickChartViewController.m; sourceTree = "<group>"; };
+		5CE55BAE1C9BFD1D00BA3071 /* CandleStickChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CandleStickChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BAF1C9BFD1D00BA3071 /* ColoredLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredLineChartViewController.h; sourceTree = "<group>"; };
+		5CE55BB01C9BFD1D00BA3071 /* ColoredLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredLineChartViewController.m; sourceTree = "<group>"; };
+		5CE55BB11C9BFD1D00BA3071 /* ColoredLineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColoredLineChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BB21C9BFD1D00BA3071 /* CombinedChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedChartViewController.h; sourceTree = "<group>"; };
+		5CE55BB31C9BFD1D00BA3071 /* CombinedChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedChartViewController.m; sourceTree = "<group>"; };
+		5CE55BB41C9BFD1D00BA3071 /* CombinedChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CombinedChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BB51C9BFD1D00BA3071 /* CubicLineChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubicLineChartViewController.h; sourceTree = "<group>"; };
+		5CE55BB61C9BFD1D00BA3071 /* CubicLineChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubicLineChartViewController.m; sourceTree = "<group>"; };
+		5CE55BB71C9BFD1D00BA3071 /* CubicLineChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CubicLineChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BB81C9BFD1D00BA3071 /* HorizontalBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BB91C9BFD1D00BA3071 /* HorizontalBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BBA1C9BFD1D00BA3071 /* HorizontalBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalBarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BBB1C9BFD1D00BA3071 /* LineChart1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChart1ViewController.h; sourceTree = "<group>"; };
+		5CE55BBC1C9BFD1D00BA3071 /* LineChart1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChart1ViewController.m; sourceTree = "<group>"; };
+		5CE55BBD1C9BFD1D00BA3071 /* LineChart1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChart1ViewController.xib; sourceTree = "<group>"; };
+		5CE55BBE1C9BFD1D00BA3071 /* LineChart2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChart2ViewController.h; sourceTree = "<group>"; };
+		5CE55BBF1C9BFD1D00BA3071 /* LineChart2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChart2ViewController.m; sourceTree = "<group>"; };
+		5CE55BC01C9BFD1D00BA3071 /* LineChart2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineChart2ViewController.xib; sourceTree = "<group>"; };
+		5CE55BC11C9BFD1D00BA3071 /* MultipleBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BC21C9BFD1D00BA3071 /* MultipleBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BC31C9BFD1D00BA3071 /* MultipleBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleBarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BC41C9BFD1D00BA3071 /* MultipleLinesChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleLinesChartViewController.h; sourceTree = "<group>"; };
+		5CE55BC51C9BFD1D00BA3071 /* MultipleLinesChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleLinesChartViewController.m; sourceTree = "<group>"; };
+		5CE55BC61C9BFD1D00BA3071 /* MultipleLinesChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultipleLinesChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BC71C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NegativeStackedBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BC81C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NegativeStackedBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BC91C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NegativeStackedBarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BCA1C9BFD1D00BA3071 /* PieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
+		5CE55BCB1C9BFD1D00BA3071 /* PieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
+		5CE55BCC1C9BFD1D00BA3071 /* PieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BCD1C9BFD1D00BA3071 /* RadarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BCE1C9BFD1D00BA3071 /* RadarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BCF1C9BFD1D00BA3071 /* RadarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BD01C9BFD1D00BA3071 /* ScatterChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScatterChartViewController.h; sourceTree = "<group>"; };
+		5CE55BD11C9BFD1D00BA3071 /* ScatterChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScatterChartViewController.m; sourceTree = "<group>"; };
+		5CE55BD21C9BFD1D00BA3071 /* ScatterChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScatterChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BD31C9BFD1D00BA3071 /* SinusBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinusBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BD41C9BFD1D00BA3071 /* SinusBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinusBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BD51C9BFD1D00BA3071 /* SinusBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinusBarChartViewController.xib; sourceTree = "<group>"; };
+		5CE55BD61C9BFD1D00BA3071 /* StackedBarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackedBarChartViewController.h; sourceTree = "<group>"; };
+		5CE55BD71C9BFD1D00BA3071 /* StackedBarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackedBarChartViewController.m; sourceTree = "<group>"; };
+		5CE55BD81C9BFD1D00BA3071 /* StackedBarChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackedBarChartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE55B931C9BFAFE00BA3071 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +201,7 @@
 		5CE55B5E1C9BF3FF00BA3071 = {
 			isa = PBXGroup;
 			children = (
+				5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */,
 				5CE55B691C9BF3FF00BA3071 /* BarChartSample */,
 				5CE55B681C9BF3FF00BA3071 /* Products */,
 			);
@@ -60,13 +220,20 @@
 			children = (
 				5CE55B6D1C9BF3FF00BA3071 /* AppDelegate.h */,
 				5CE55B6E1C9BF3FF00BA3071 /* AppDelegate.m */,
-				5CE55B701C9BF3FF00BA3071 /* ViewController.h */,
-				5CE55B711C9BF3FF00BA3071 /* ViewController.m */,
+				5CE55B9D1C9BFD1C00BA3071 /* DemoBaseViewController.h */,
+				5CE55B9E1C9BFD1C00BA3071 /* DemoBaseViewController.m */,
+				5CE55B9F1C9BFD1C00BA3071 /* DemoListViewController.h */,
+				5CE55BA01C9BFD1C00BA3071 /* DemoListViewController.m */,
+				5CE55BA11C9BFD1C00BA3071 /* DemoListViewController.xib */,
+				5CE55B991C9BFD1C00BA3071 /* Components */,
+				5CE55BA21C9BFD1D00BA3071 /* Demos */,
+				5CE55B821C9BF47000BA3071 /* Test.swift */,
 				5CE55B731C9BF3FF00BA3071 /* Main.storyboard */,
 				5CE55B761C9BF3FF00BA3071 /* Assets.xcassets */,
 				5CE55B781C9BF3FF00BA3071 /* LaunchScreen.storyboard */,
 				5CE55B7B1C9BF3FF00BA3071 /* Info.plist */,
 				5CE55B6A1C9BF3FF00BA3071 /* Supporting Files */,
+				5CE55B811C9BF47000BA3071 /* BarChartSample-Bridging-Header.h */,
 			);
 			path = BarChartSample;
 			sourceTree = "<group>";
@@ -79,6 +246,88 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5CE55B851C9BF97800BA3071 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CE55B8C1C9BF97800BA3071 /* Charts.framework */,
+				5CE55B8E1C9BF97800BA3071 /* Charts.framework */,
+				5CE55B901C9BF97800BA3071 /* Charts.framework */,
+				5CE55B921C9BF97800BA3071 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CE55B991C9BFD1C00BA3071 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5CE55B9A1C9BFD1C00BA3071 /* BalloonMarker.swift */,
+				5CE55B9B1C9BFD1C00BA3071 /* MyCustomXValueFormatter.h */,
+				5CE55B9C1C9BFD1C00BA3071 /* MyCustomXValueFormatter.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5CE55BA21C9BFD1D00BA3071 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				5CE55BA31C9BFD1D00BA3071 /* AnotherBarChartViewController.h */,
+				5CE55BA41C9BFD1D00BA3071 /* AnotherBarChartViewController.m */,
+				5CE55BA51C9BFD1D00BA3071 /* AnotherBarChartViewController.xib */,
+				5CE55BA61C9BFD1D00BA3071 /* BarChartViewController.h */,
+				5CE55BA71C9BFD1D00BA3071 /* BarChartViewController.m */,
+				5CE55BA81C9BFD1D00BA3071 /* BarChartViewController.xib */,
+				5CE55BA91C9BFD1D00BA3071 /* BubbleChartViewController.h */,
+				5CE55BAA1C9BFD1D00BA3071 /* BubbleChartViewController.m */,
+				5CE55BAB1C9BFD1D00BA3071 /* BubbleChartViewController.xib */,
+				5CE55BAC1C9BFD1D00BA3071 /* CandleStickChartViewController.h */,
+				5CE55BAD1C9BFD1D00BA3071 /* CandleStickChartViewController.m */,
+				5CE55BAE1C9BFD1D00BA3071 /* CandleStickChartViewController.xib */,
+				5CE55BAF1C9BFD1D00BA3071 /* ColoredLineChartViewController.h */,
+				5CE55BB01C9BFD1D00BA3071 /* ColoredLineChartViewController.m */,
+				5CE55BB11C9BFD1D00BA3071 /* ColoredLineChartViewController.xib */,
+				5CE55BB21C9BFD1D00BA3071 /* CombinedChartViewController.h */,
+				5CE55BB31C9BFD1D00BA3071 /* CombinedChartViewController.m */,
+				5CE55BB41C9BFD1D00BA3071 /* CombinedChartViewController.xib */,
+				5CE55BB51C9BFD1D00BA3071 /* CubicLineChartViewController.h */,
+				5CE55BB61C9BFD1D00BA3071 /* CubicLineChartViewController.m */,
+				5CE55BB71C9BFD1D00BA3071 /* CubicLineChartViewController.xib */,
+				5CE55BB81C9BFD1D00BA3071 /* HorizontalBarChartViewController.h */,
+				5CE55BB91C9BFD1D00BA3071 /* HorizontalBarChartViewController.m */,
+				5CE55BBA1C9BFD1D00BA3071 /* HorizontalBarChartViewController.xib */,
+				5CE55BBB1C9BFD1D00BA3071 /* LineChart1ViewController.h */,
+				5CE55BBC1C9BFD1D00BA3071 /* LineChart1ViewController.m */,
+				5CE55BBD1C9BFD1D00BA3071 /* LineChart1ViewController.xib */,
+				5CE55BBE1C9BFD1D00BA3071 /* LineChart2ViewController.h */,
+				5CE55BBF1C9BFD1D00BA3071 /* LineChart2ViewController.m */,
+				5CE55BC01C9BFD1D00BA3071 /* LineChart2ViewController.xib */,
+				5CE55BC11C9BFD1D00BA3071 /* MultipleBarChartViewController.h */,
+				5CE55BC21C9BFD1D00BA3071 /* MultipleBarChartViewController.m */,
+				5CE55BC31C9BFD1D00BA3071 /* MultipleBarChartViewController.xib */,
+				5CE55BC41C9BFD1D00BA3071 /* MultipleLinesChartViewController.h */,
+				5CE55BC51C9BFD1D00BA3071 /* MultipleLinesChartViewController.m */,
+				5CE55BC61C9BFD1D00BA3071 /* MultipleLinesChartViewController.xib */,
+				5CE55BC71C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.h */,
+				5CE55BC81C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.m */,
+				5CE55BC91C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.xib */,
+				5CE55BCA1C9BFD1D00BA3071 /* PieChartViewController.h */,
+				5CE55BCB1C9BFD1D00BA3071 /* PieChartViewController.m */,
+				5CE55BCC1C9BFD1D00BA3071 /* PieChartViewController.xib */,
+				5CE55BCD1C9BFD1D00BA3071 /* RadarChartViewController.h */,
+				5CE55BCE1C9BFD1D00BA3071 /* RadarChartViewController.m */,
+				5CE55BCF1C9BFD1D00BA3071 /* RadarChartViewController.xib */,
+				5CE55BD01C9BFD1D00BA3071 /* ScatterChartViewController.h */,
+				5CE55BD11C9BFD1D00BA3071 /* ScatterChartViewController.m */,
+				5CE55BD21C9BFD1D00BA3071 /* ScatterChartViewController.xib */,
+				5CE55BD31C9BFD1D00BA3071 /* SinusBarChartViewController.h */,
+				5CE55BD41C9BFD1D00BA3071 /* SinusBarChartViewController.m */,
+				5CE55BD51C9BFD1D00BA3071 /* SinusBarChartViewController.xib */,
+				5CE55BD61C9BFD1D00BA3071 /* StackedBarChartViewController.h */,
+				5CE55BD71C9BFD1D00BA3071 /* StackedBarChartViewController.m */,
+				5CE55BD81C9BFD1D00BA3071 /* StackedBarChartViewController.xib */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,10 +338,12 @@
 				5CE55B631C9BF3FF00BA3071 /* Sources */,
 				5CE55B641C9BF3FF00BA3071 /* Frameworks */,
 				5CE55B651C9BF3FF00BA3071 /* Resources */,
+				5CE55B971C9BFAFF00BA3071 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5CE55B961C9BFAFE00BA3071 /* PBXTargetDependency */,
 			);
 			name = BarChartSample;
 			productName = BarChartSample;
@@ -124,6 +375,12 @@
 			mainGroup = 5CE55B5E1C9BF3FF00BA3071;
 			productRefGroup = 5CE55B681C9BF3FF00BA3071 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5CE55B851C9BF97800BA3071 /* Products */;
+					ProjectRef = 5CE55B841C9BF97800BA3071 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5CE55B661C9BF3FF00BA3071 /* BarChartSample */,
@@ -131,14 +388,64 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5CE55B8C1C9BF97800BA3071 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5CE55B8B1C9BF97800BA3071 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CE55B8E1C9BF97800BA3071 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5CE55B8D1C9BF97800BA3071 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CE55B901C9BF97800BA3071 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 5CE55B8F1C9BF97800BA3071 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5CE55B921C9BF97800BA3071 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 5CE55B911C9BF97800BA3071 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		5CE55B651C9BF3FF00BA3071 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CE55BE91C9BFD1D00BA3071 /* CombinedChartViewController.xib in Resources */,
+				5CE55BEF1C9BFD1D00BA3071 /* LineChart1ViewController.xib in Resources */,
+				5CE55BED1C9BFD1D00BA3071 /* HorizontalBarChartViewController.xib in Resources */,
+				5CE55BE31C9BFD1D00BA3071 /* BubbleChartViewController.xib in Resources */,
 				5CE55B7A1C9BF3FF00BA3071 /* LaunchScreen.storyboard in Resources */,
 				5CE55B771C9BF3FF00BA3071 /* Assets.xcassets in Resources */,
 				5CE55B751C9BF3FF00BA3071 /* Main.storyboard in Resources */,
+				5CE55BE11C9BFD1D00BA3071 /* BarChartViewController.xib in Resources */,
+				5CE55BFB1C9BFD1D00BA3071 /* RadarChartViewController.xib in Resources */,
+				5CE55BF71C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.xib in Resources */,
+				5CE55BE71C9BFD1D00BA3071 /* ColoredLineChartViewController.xib in Resources */,
+				5CE55C011C9BFD1D00BA3071 /* StackedBarChartViewController.xib in Resources */,
+				5CE55BF31C9BFD1D00BA3071 /* MultipleBarChartViewController.xib in Resources */,
+				5CE55BE51C9BFD1D00BA3071 /* CandleStickChartViewController.xib in Resources */,
+				5CE55BF11C9BFD1D00BA3071 /* LineChart2ViewController.xib in Resources */,
+				5CE55BFD1C9BFD1D00BA3071 /* ScatterChartViewController.xib in Resources */,
+				5CE55BDD1C9BFD1D00BA3071 /* DemoListViewController.xib in Resources */,
+				5CE55BF91C9BFD1D00BA3071 /* PieChartViewController.xib in Resources */,
+				5CE55BF51C9BFD1D00BA3071 /* MultipleLinesChartViewController.xib in Resources */,
+				5CE55BDF1C9BFD1D00BA3071 /* AnotherBarChartViewController.xib in Resources */,
+				5CE55BEB1C9BFD1D00BA3071 /* CubicLineChartViewController.xib in Resources */,
+				5CE55BFF1C9BFD1D00BA3071 /* SinusBarChartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,13 +456,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE55B721C9BF3FF00BA3071 /* ViewController.m in Sources */,
+				5CE55BFE1C9BFD1D00BA3071 /* SinusBarChartViewController.m in Sources */,
+				5CE55BF21C9BFD1D00BA3071 /* MultipleBarChartViewController.m in Sources */,
+				5CE55BE61C9BFD1D00BA3071 /* ColoredLineChartViewController.m in Sources */,
+				5CE55BDB1C9BFD1D00BA3071 /* DemoBaseViewController.m in Sources */,
+				5CE55BF41C9BFD1D00BA3071 /* MultipleLinesChartViewController.m in Sources */,
+				5CE55BE81C9BFD1D00BA3071 /* CombinedChartViewController.m in Sources */,
+				5CE55BDE1C9BFD1D00BA3071 /* AnotherBarChartViewController.m in Sources */,
+				5CE55BDA1C9BFD1D00BA3071 /* MyCustomXValueFormatter.m in Sources */,
+				5CE55BE41C9BFD1D00BA3071 /* CandleStickChartViewController.m in Sources */,
+				5CE55B831C9BF47000BA3071 /* Test.swift in Sources */,
 				5CE55B6F1C9BF3FF00BA3071 /* AppDelegate.m in Sources */,
+				5CE55BF61C9BFD1D00BA3071 /* NegativeStackedBarChartViewController.m in Sources */,
 				5CE55B6C1C9BF3FF00BA3071 /* main.m in Sources */,
+				5CE55BE01C9BFD1D00BA3071 /* BarChartViewController.m in Sources */,
+				5CE55C001C9BFD1D00BA3071 /* StackedBarChartViewController.m in Sources */,
+				5CE55BF81C9BFD1D00BA3071 /* PieChartViewController.m in Sources */,
+				5CE55BFA1C9BFD1D00BA3071 /* RadarChartViewController.m in Sources */,
+				5CE55BE21C9BFD1D00BA3071 /* BubbleChartViewController.m in Sources */,
+				5CE55BDC1C9BFD1D00BA3071 /* DemoListViewController.m in Sources */,
+				5CE55BEC1C9BFD1D00BA3071 /* HorizontalBarChartViewController.m in Sources */,
+				5CE55BF01C9BFD1D00BA3071 /* LineChart2ViewController.m in Sources */,
+				5CE55BEA1C9BFD1D00BA3071 /* CubicLineChartViewController.m in Sources */,
+				5CE55BD91C9BFD1D00BA3071 /* BalloonMarker.swift in Sources */,
+				5CE55BFC1C9BFD1D00BA3071 /* ScatterChartViewController.m in Sources */,
+				5CE55BEE1C9BFD1D00BA3071 /* LineChart1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5CE55B961C9BFAFE00BA3071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 5CE55B951C9BFAFE00BA3071 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5CE55B731C9BF3FF00BA3071 /* Main.storyboard */ = {
@@ -216,6 +553,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -252,6 +590,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -261,10 +600,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BarChartSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.BarChartSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BarChartSample/BarChartSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -272,10 +616,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = BarChartSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.BarChartSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BarChartSample/BarChartSample-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -298,6 +646,7 @@
 				5CE55B801C9BF3FF00BA3071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

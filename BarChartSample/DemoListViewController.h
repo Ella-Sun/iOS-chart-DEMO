@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  DemoListViewController.h
 //  ChartsDemo
 //
 //  Created by Daniel Cohen Gindi on 23/2/15.
@@ -13,9 +13,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface DemoListViewController : UIViewController
 
 
 @end

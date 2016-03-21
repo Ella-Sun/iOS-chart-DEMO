@@ -1,12 +1,18 @@
 //
 //  AppDelegate.m
-//  BarChartSample
+//  ChartsDemo
 //
-//  Created by IOS-Sun on 16/3/18.
-//  Copyright © 2016年 IOS-Sun. All rights reserved.
+//  Created by Daniel Cohen Gindi on 23/2/15.
+//
+//  Copyright 2015 Daniel Cohen Gindi & Philipp Jahoda
+//  A port of MPAndroidChart for iOS
+//  Licensed under Apache License 2.0
+//
+//  https://github.com/danielgindi/ios-charts
 //
 
 #import "AppDelegate.h"
+#import "DemoListViewController.h"
 
 @interface AppDelegate ()
 
@@ -14,9 +20,16 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    DemoListViewController *vc = [[DemoListViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    _window.rootViewController = nvc;
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 
