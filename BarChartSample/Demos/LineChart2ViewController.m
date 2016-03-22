@@ -59,16 +59,18 @@
     
     _chartView.backgroundColor = [UIColor colorWithWhite:204/255.f alpha:1.f];
     
+    /**<  图例  >**/
     _chartView.legend.form = ChartLegendFormLine;
     _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
-    _chartView.legend.textColor = UIColor.whiteColor;
-    _chartView.legend.position = ChartLegendPositionBelowChartLeft;
+    _chartView.legend.textColor = UIColor.blackColor;
+    _chartView.legend.position = ChartLegendPositionLeftOfChartInside;
     
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
     xAxis.labelTextColor = UIColor.whiteColor;
-    xAxis.drawGridLinesEnabled = NO;
-    xAxis.drawAxisLineEnabled = NO;
+//    xAxis.drawGridLinesEnabled = NO; /**<  是否显示横线  >**/
+    xAxis.drawAxisLineEnabled = NO;/**<  是否显示X横坐标线  >**/
+    xAxis.labelPosition = XAxisLabelPositionBottom;/**<  X轴显示位置  >**/
     xAxis.spaceBetweenLabels = 1.0;
     
     ChartYAxis *leftAxis = _chartView.leftAxis;
@@ -76,15 +78,16 @@
     leftAxis.customAxisMax = 200.0;
     leftAxis.drawGridLinesEnabled = YES;
     
+//    _chartView.rightAxis.enabled = NO;
     ChartYAxis *rightAxis = _chartView.rightAxis;
     rightAxis.labelTextColor = UIColor.redColor;
-    rightAxis.customAxisMax = 900.0;
+//    rightAxis.customAxisMax = 900.0;
     rightAxis.startAtZeroEnabled = NO;
-    rightAxis.customAxisMin = -200.0;
+//    rightAxis.customAxisMin = -200.0;
     rightAxis.drawGridLinesEnabled = NO;
     
-    _sliderX.value = 19.0;
-    _sliderY.value = 30.0;
+    _sliderX.value = 10.0;
+    _sliderY.value = 1030.0;
     [self slidersValueChanged:nil];
     
     [_chartView animateWithXAxisDuration:2.5];
@@ -98,6 +101,14 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
+    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:1.0] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
+    marker.minimumSize = CGSizeMake(80.f, 40.f);
+    NSArray * barTexts = @[@"收:",@"支:"];
+    NSMutableArray * barText1 = [NSMutableArray array];
+    NSMutableArray * barText2 = [NSMutableArray array];
+    
+    _chartView.legend.form = ChartLegendFormLine;
+    
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < count; i++)
@@ -106,6 +117,7 @@
     }
     
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
+    NSMutableArray *yVals2 = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < count; i++)
     {
@@ -114,25 +126,46 @@
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet 1"];
-    set1.axisDependency = AxisDependencyLeft;
-    [set1 setColor:[UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f]];
-    [set1 setCircleColor:UIColor.whiteColor];
-    set1.lineWidth = 2.0;
-    set1.circleRadius = 3.0;
-    set1.fillAlpha = 65/255.0;
-    set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
-    set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
-    set1.drawCircleHoleEnabled = NO;
-    
-    NSMutableArray *yVals2 = [[NSMutableArray alloc] init];
-    
     for (int i = 0; i < count; i++)
     {
         double mult = range;
         double val = (double) (arc4random_uniform(mult)) + 450;
         [yVals2 addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
+    
+    BOOL isNav = YES;
+    for (BarChartDataEntry *valEntry in yVals) {
+        if (valEntry.value < 0) {
+            isNav = NO;
+        }
+        [barText1 addObject:barTexts[0]];
+    }
+    for (BarChartDataEntry *valEntry in yVals2) {
+        if (valEntry.value < 0) {
+            isNav = NO;
+        }
+        [barText2 addObject:barTexts[1]];
+    }
+    [marker.barDescription addObject:barText1];
+    [marker.barDescription addObject:barText2];
+    _chartView.marker = marker;
+    _chartView.leftAxis.startAtZeroEnabled = isNav;
+    
+    /**<  设置点的属性  >**/
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet 1"];
+    set1.axisDependency = AxisDependencyLeft;/**<  Y轴坐标依赖 左侧  >**/
+    [set1 setColor:[UIColor blackColor]];/**<  线的颜色  >**/
+    [set1 setCircleColor:UIColor.whiteColor];/**<  点的颜色  >**/
+    set1.lineWidth = 2.0;/**<  折现宽  >**/
+    set1.circleRadius = 3.0;/**<  圆点大小  >**/
+    set1.fillAlpha = 65/255.0;
+    set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
+    /**<  移动的虚线的颜色  >**/
+    set1.highlightLineWidth = 1;
+    set1.highlightLineDashLengths = @[@15.0,@10.0];
+    set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
+    set1.drawCircleHoleEnabled = NO;
+    
     
     LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithYVals:yVals2 label:@"DataSet 2"];
     set2.axisDependency = AxisDependencyRight;
@@ -142,12 +175,15 @@
     set2.circleRadius = 3.0;
     set2.fillAlpha = 65/255.0;
     set2.fillColor = UIColor.redColor;
+    /**<  移动的虚线  >**/
+    set2.highlightLineWidth = 1;
+    set2.highlightLineDashLengths = @[@15.0,@10.0];
     set2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
     set2.drawCircleHoleEnabled = NO;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
-    [dataSets addObject:set2];
     [dataSets addObject:set1];
+    [dataSets addObject:set2];
     
     LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
     [data setValueTextColor:UIColor.whiteColor];

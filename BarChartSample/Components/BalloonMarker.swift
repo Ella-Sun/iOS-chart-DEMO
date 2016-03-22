@@ -105,12 +105,17 @@ public class BalloonMarker: ChartMarker
         let isGroup = highlight.dataSetIndex
         let xIndex = highlight.xIndex
         let detailDes: [NSString]
-        let text: NSString
-        if self.barDescription[0].count > xIndex {
-            detailDes = self.barDescription[isGroup] as! [NSString]
-            text = detailDes[xIndex]
-        } else {
-            text = ""
+        var text: NSString = ""
+        var childAry: [NSString]
+        
+        if self.barDescription.count > 0 {
+            
+            childAry = self.barDescription[0] as! [NSString]
+            
+            if childAry.count > xIndex {
+                detailDes = self.barDescription[isGroup] as! [NSString]
+                text = detailDes[xIndex]
+            }
         }
         
         let label = (text as String) + entry.value.description
