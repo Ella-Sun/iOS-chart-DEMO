@@ -81,6 +81,77 @@
     
 }
 
+#pragma mark - Common option actions
+
+- (void)handleOption:(NSString *)key forChartView:(ChartViewBase *)chartView
+{
+    if ([key isEqualToString:@"toggleValues"])
+    {
+        for (id<IChartDataSet> set in chartView.data.dataSets)
+        {
+            set.drawValuesEnabled = !set.isDrawValuesEnabled;
+        }
+        
+        [chartView setNeedsDisplay];
+    }
+    
+    if ([key isEqualToString:@"toggleHighlight"])
+    {
+        chartView.data.highlightEnabled = !chartView.data.isHighlightEnabled;
+        [chartView setNeedsDisplay];
+    }
+    
+    if ([key isEqualToString:@"animateX"])
+    {
+        [chartView animateWithXAxisDuration:3.0];
+    }
+    
+    if ([key isEqualToString:@"animateY"])
+    {
+        [chartView animateWithYAxisDuration:3.0];
+    }
+    
+    if ([key isEqualToString:@"animateXY"])
+    {
+        [chartView animateWithXAxisDuration:3.0 yAxisDuration:3.0];
+    }
+    
+    if ([key isEqualToString:@"saveToGallery"])
+    {
+        [chartView saveToCameraRoll];
+    }
+    
+    if ([key isEqualToString:@"togglePinchZoom"])
+    {
+        BarLineChartViewBase *barLineChart = (BarLineChartViewBase *)chartView;
+        barLineChart.pinchZoomEnabled = !barLineChart.isPinchZoomEnabled;
+        
+        [chartView setNeedsDisplay];
+    }
+    
+    if ([key isEqualToString:@"toggleAutoScaleMinMax"])
+    {
+        BarLineChartViewBase *barLineChart = (BarLineChartViewBase *)chartView;
+        barLineChart.autoScaleMinMaxEnabled = !barLineChart.isAutoScaleMinMaxEnabled;
+        
+        [chartView notifyDataSetChanged];
+    }
+    
+    if ([key isEqualToString:@"toggleHighlightArrow"])
+    {
+        BarChartView *barChart = (BarChartView *)chartView;
+        barChart.drawHighlightArrowEnabled = !barChart.isDrawHighlightArrowEnabled;
+        
+        [chartView setNeedsDisplay];
+    }
+    
+    if ([key isEqualToString:@"toggleData"])
+    {
+        _shouldHideData = !_shouldHideData;
+        [self updateChartData];
+    }
+}
+
 #pragma mark - Actions
 //增加动画类型以及界面显示的属性布尔值
 - (IBAction)optionsButtonTapped:(id)sender
@@ -106,16 +177,17 @@
     
     NSMutableArray *constraints = [[NSMutableArray alloc] init];
     //添加约束
+    // 代码添加自动布局 距离self.view左侧40
     [constraints addObject:[NSLayoutConstraint constraintWithItem:_optionsTableView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.f constant:40.f]];
-    
+    //_optionsTableView距离sender右侧0（与secder右对齐）
     [constraints addObject:[NSLayoutConstraint constraintWithItem:_optionsTableView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:sender attribute:NSLayoutAttributeTrailing multiplier:1.f constant:0]];
-    
+    //_optionsTableView顶部距离sender底部距离5
     [constraints addObject:[NSLayoutConstraint constraintWithItem:_optionsTableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:sender attribute:NSLayoutAttributeBottom multiplier:1.f constant:5.f]];
     
     [self.view addSubview:_optionsTableView];
     
     [self.view addConstraints:constraints];
-    
+    //布局_optionsTableView的高度为220
     [_optionsTableView addConstraints:@[
                                         [NSLayoutConstraint constraintWithItem:_optionsTableView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeHeight multiplier:1.f constant:220.f]
                                         ]];
@@ -202,11 +274,11 @@
     [chartView setExtraOffsetsWithLeft:5.f top:10.f right:5.f bottom:5.f];
     
     chartView.drawCenterTextEnabled = YES;
-    
+    // 设置中间文字颜色样式
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
     paragraphStyle.alignment = NSTextAlignmentCenter;
-    
+    // 中间文字
     NSMutableAttributedString *centerText = [[NSMutableAttributedString alloc] initWithString:@"iOS Charts\nby Daniel Cohen Gindi"];
     [centerText setAttributes:@{
                                 NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Light" size:12.f],
@@ -222,11 +294,11 @@
                                 } range:NSMakeRange(centerText.length - 19, 19)];
     chartView.centerAttributedText = centerText;
     
-    chartView.drawHoleEnabled = YES;
-    chartView.rotationAngle = 0.0;
-    chartView.rotationEnabled = YES;
+    chartView.drawHoleEnabled = YES; // 中间圆的有无（yes显示中间圆）
+    chartView.rotationAngle = 0.0; // 当前的旋转角度
+    chartView.rotationEnabled = YES; // 指示旋转是否启用或不启用的标志（设置为no也带有旋转动画）
     chartView.highlightPerTapEnabled = YES;
-    
+    // 饼状图右上角的图例
     ChartLegend *l = chartView.legend;
     l.position = ChartLegendPositionRightOfChart;
     l.xEntrySpace = 7.0;

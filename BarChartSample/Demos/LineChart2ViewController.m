@@ -159,8 +159,9 @@
     set1.lineWidth = 2.0;/**<  折现宽  >**/
     set1.circleRadius = 3.0;/**<  圆点大小  >**/
     set1.fillAlpha = 65/255.0;
+    /**<  折线的颜色  >**/
     set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
-    /**<  移动的虚线的颜色  >**/
+    /**<  移动虚线属性设置  >**/
     set1.highlightLineWidth = 1;
     set1.highlightLineDashLengths = @[@15.0,@10.0];
     set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
@@ -175,7 +176,7 @@
     set2.circleRadius = 3.0;
     set2.fillAlpha = 65/255.0;
     set2.fillColor = UIColor.redColor;
-    /**<  移动的虚线  >**/
+    /**<  移动虚线  >**/
     set2.highlightLineWidth = 1;
     set2.highlightLineDashLengths = @[@15.0,@10.0];
     set2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];

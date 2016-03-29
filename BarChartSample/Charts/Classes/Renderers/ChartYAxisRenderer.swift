@@ -21,6 +21,11 @@ import CoreGraphics
 
 public class ChartYAxisRenderer: ChartAxisRendererBase
 {
+    // 记录转换后的坐标
+    public var yPoint = CGPoint(x: 0.0, y: 0.0)
+    //记录翻转矩阵
+    public var trans = CGAffineTransform()
+    
     public var yAxis: ChartYAxis?
     
     public init(viewPortHandler: ChartViewPortHandler, yAxis: ChartYAxis, transformer: ChartTransformer!)
@@ -76,18 +81,8 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             return
         }
         
-        // Find out how much spacing (in y value space) between axis values
         let rawInterval = range / Double(labelCount)
         var interval = ChartUtils.roundToNextSignificant(number: Double(rawInterval))
-        
-        // If granularity is enabled, then do not allow the interval to go below specified granularity.
-        // This is used to avoid repeated values when rounding values for display.
-        if yAxis.granularityEnabled
-        {
-            interval = interval < yAxis.granuality ? yAxis.granuality : interval
-        }
-        
-        // Normalize interval
         let intervalMagnitude = pow(10.0, round(log10(interval)))
         let intervalSigDigit = (interval / intervalMagnitude)
         if (intervalSigDigit > 5)
@@ -408,8 +403,11 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
         CGContextSaveGState(context)
         
         let trans = transformer.valueToPixelMatrix
+        self.trans = trans
         
         var position = CGPoint(x: 0.0, y: 0.0)
+        
+        var newPosition = CGPoint(x: 0.0, y: 0.0)
         
         for (var i = 0; i < limitLines.count; i++)
         {
@@ -423,6 +421,11 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             position.x = 0.0
             position.y = CGFloat(l.limit)
             position = CGPointApplyAffineTransform(position, trans)
+            // 记录转换后的坐标
+            self.yPoint = position
+            
+            let invert = CGAffineTransformInvert(trans);
+            newPosition = CGPointApplyAffineTransform(position,invert)
             
             _limitLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
             _limitLineSegmentsBuffer[0].y = position.y

@@ -104,7 +104,7 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
         {
             return
         }
-        
+        //todo:画虚线
         CGContextSaveGState(context)
         
         CGContextSetStrokeColorWithColor(context, xAxis.axisLineColor.CGColor)
@@ -226,7 +226,7 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
         {
             return
         }
-        
+        //todo:画虚线
         CGContextSaveGState(context)
         
         CGContextSetShouldAntialias(context, xAxis.gridAntialiasEnabled)
@@ -312,7 +312,7 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
         _limitLineSegmentsBuffer[0].y = viewPortHandler.contentTop
         _limitLineSegmentsBuffer[1].x = position.x
         _limitLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
-        
+        //todo:画虚线
         CGContextSetStrokeColorWithColor(context, limitLine.lineColor.CGColor)
         CGContextSetLineWidth(context, limitLine.lineWidth)
         if (limitLine.lineDashLengths != nil)

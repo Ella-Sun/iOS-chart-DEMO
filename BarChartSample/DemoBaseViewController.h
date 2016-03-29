@@ -24,6 +24,16 @@
 @property (nonatomic, strong) IBOutlet UIButton *optionsButton;
 @property (nonatomic, strong) IBOutlet NSArray *options;
 
+
+//TODO: gy
+@property (nonatomic, assign) BOOL shouldHideData;
+
+- (void)handleOption:(NSString *)key forChartView:(ChartViewBase *)chartView;
+
+- (void)updateChartData;
+//TODO:
+
+
 - (void)setupPieChartView:(PieChartView *)chartView;
 - (void)setupRadarChartView:(RadarChartView *)chartView;
 - (void)setupBarLineChartView:(BarLineChartViewBase *)chartView;

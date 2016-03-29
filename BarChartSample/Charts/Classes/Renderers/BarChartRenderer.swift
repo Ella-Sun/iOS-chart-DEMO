@@ -576,16 +576,16 @@ public class BarChartRenderer: ChartDataRendererBase
                         CGContextSetLineDash(context, set.highlightLineDashPhase, set.highlightLineDashLengths!, set.highlightLineDashLengths!.count)
                     }
                     else
+                    {
 //                    set.highlightLineDashLengths = [12.0, 10.0]
 //                    CGContextSetLineDash(context, 0.0, nil, 0)
-                    {
                         CGContextSetLineDash(context, 0.0, [12.0, 10.0], 2)
                     }
                     
 //                    let low = CGFloat(e.low) * _animator.phaseY
 //                    let high = CGFloat(e.high) * _animator.phaseY
                     let offsetY = viewPortHandler.chartHeight
-                    let yArrow = (y1 >= -y2 ? y1 : y1) * Double(offsetY)//(low + high) / 2.0
+                    let yArrow = (y1 >= -y2 ? y1 : y1) * Double(offsetY)
 //                    let yArrow = (y1 >= -y2) ? viewPortHandler.contentBottom:viewPortHandler.contentTop
                     _highlightArrowPtsBuffer[0].x = CGFloat(x)
                     _highlightArrowPtsBuffer[0].y = CGFloat(yArrow)// + offsetY

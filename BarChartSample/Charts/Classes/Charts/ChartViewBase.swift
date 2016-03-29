@@ -541,11 +541,7 @@ public class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
                 {
                     continue
                 }
-//                let any = self._data?._dataSets.count
-//                let singleAy: [NSString] = ["收","支"]
-//                let mulAry: [NSString] = ["净","收","支"]
                 
-//                let label = e?.value.description
                 // callbacks to update the content
                 marker!.refreshContent(entry: e!, highlight: highlight)
 
