@@ -35,22 +35,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
-            timestampString = "480933353.162706"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "546"
-            endingLineNumber = "546"
-            landmarkName = "drawMarkers(context:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BarChartSample/Charts/Classes/Components/ChartAxisBase.swift"
             timestampString = "480420477.174905"
             startingColumnNumber = "9223372036854775807"
@@ -75,6 +59,429 @@
             endingLineNumber = "215"
             landmarkName = "renderLimitLines(context:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Data/Implementations/Standard/BarChartDataSet.swift"
+            timestampString = "481023711.692446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "BarChartDataSet"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarChartDataSet.init () -&gt; Charts.BarChartDataSet"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarChartDataSet.swift"
+                  timestampString = "481024634.030542"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarChartDataSet.init (yVals : Swift.Optional&lt;Swift.Array&lt;Charts.ChartDataEntry&gt;&gt;, label : Swift.Optional&lt;Swift.String&gt;) -&gt; Charts.BarChartDataSet"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarChartDataSet.swift"
+                  timestampString = "481024634.030675"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "226">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarChartDataSet.barShadowColor.getter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarChartDataSet.swift"
+                  timestampString = "481024634.030775"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarChartDataSet.barShadowColor.setter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarChartDataSet.swift"
+                  timestampString = "481024634.030874"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "179"
+                  endingLineNumber = "179"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Charts/BarLineChartViewBase.swift"
+            timestampString = "481023718.979151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "BarLineChartViewBase"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineChartViewBase.gridBackgroundColor.getter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/BarLineChartViewBase.swift"
+                  timestampString = "481024634.032172"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineChartViewBase.gridBackgroundColor.setter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/BarLineChartViewBase.swift"
+                  timestampString = "481024634.032347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineChartViewBase.init (frame : __C.CGRect) -&gt; Charts.BarLineChartViewBase"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/BarLineChartViewBase.swift"
+                  timestampString = "481024634.032484"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "207">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineChartViewBase.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Charts.BarLineChartViewBase&gt;"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/BarLineChartViewBase.swift"
+                  timestampString = "481024634.032597"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "174">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+            timestampString = "481023727.569823"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "BarLineScatterCandleBubbleChartDataSet"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineScatterCandleBubbleChartDataSet.highlightColor.getter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+                  timestampString = "481024634.033939"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineScatterCandleBubbleChartDataSet.highlightColor.setter : __ObjC.UIColor"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+                  timestampString = "481024634.034058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineScatterCandleBubbleChartDataSet.init () -&gt; Charts.BarLineScatterCandleBubbleChartDataSet"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+                  timestampString = "481024634.034151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineScatterCandleBubbleChartDataSet.init (label : Swift.Optional&lt;Swift.String&gt;) -&gt; Charts.BarLineScatterCandleBubbleChartDataSet"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+                  timestampString = "481024634.034263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.BarLineScatterCandleBubbleChartDataSet.init (yVals : Swift.Optional&lt;Swift.Array&lt;Charts.ChartDataEntry&gt;&gt;, label : Swift.Optional&lt;Swift.String&gt;) -&gt; Charts.BarLineScatterCandleBubbleChartDataSet"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Data/Implementations/Standard/BarLineScatterCandleBubbleChartDataSet.swift"
+                  timestampString = "481024634.034354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023753.820652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "liberty()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023755.912476"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "joyful()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023758.284893"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "pastel()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023760.698037"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "colorful()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023763.763276"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "vordiplom()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Utils/ChartColorTemplates.swift"
+            timestampString = "481023770.654231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "colorFromString(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
+            timestampString = "481023813.08776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "ChartViewBase"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.ChartViewBase.infoTextColor.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIColor&gt;"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
+                  timestampString = "481024634.039805"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.ChartViewBase.infoTextColor.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIColor&gt;"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
+                  timestampString = "481024634.039927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.ChartViewBase.init (frame : __C.CGRect) -&gt; Charts.ChartViewBase"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
+                  timestampString = "481024634.040025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "543">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Charts.ChartViewBase.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Charts.ChartViewBase&gt;"
+                  moduleName = "Charts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Evasun/Desktop/BarChartSample/BarChartSample/Charts/Classes/Charts/ChartViewBase.swift"
+                  timestampString = "481024634.040126"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "483">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

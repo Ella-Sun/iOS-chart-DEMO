@@ -18,9 +18,9 @@ import CoreGraphics
     import UIKit
 #endif
 
-
 public class PieChartRenderer: ChartDataRendererBase
 {
+    var centerButton: UIButton?
     public weak var chart: PieChartView?
     
     public init(chart: PieChartView, animator: ChartAnimator?, viewPortHandler: ChartViewPortHandler)
@@ -137,8 +137,6 @@ public class PieChartRenderer: ChartDataRendererBase
                 if (!chart.needsHighlight(xIndex: e.xIndex,
                     dataSetIndex: data.indexOfDataSet(dataSet)))
                 {
-                    let accountForSliceSpacing = sliceSpace > 0.0 && sliceAngle <= 180.0
-                    
                     CGContextSetFillColorWithColor(context, dataSet.colorAt(j).CGColor)
                     
                     let sliceSpaceAngleOuter = visibleAngleCount == 1 ?
@@ -171,9 +169,9 @@ public class PieChartRenderer: ChartDataRendererBase
                         sweepAngleOuter * ChartUtils.Math.FDEG2RAD)
 
                     if drawInnerArc &&
-                        (innerRadius > 0.0 || accountForSliceSpacing)
+                        (innerRadius > 0.0 || sliceSpace > 0.0)
                     {
-                        if accountForSliceSpacing
+                        if sliceSpace > 0.0
                         {
                             var minSpacedRadius = calculateMinimumRadiusForSpacedSlice(
                                 center: center,
@@ -187,7 +185,7 @@ public class PieChartRenderer: ChartDataRendererBase
                             {
                                 minSpacedRadius = -minSpacedRadius
                             }
-                            innerRadius = min(max(innerRadius, minSpacedRadius), radius)
+                            innerRadius = max(innerRadius, minSpacedRadius)
                         }
                         
                         let sliceSpaceAngleInner = visibleAngleCount == 1 || innerRadius == 0.0 ?
@@ -217,7 +215,7 @@ public class PieChartRenderer: ChartDataRendererBase
                     }
                     else
                     {
-                        if accountForSliceSpacing
+                        if sliceSpace > 0.0
                         {
                             let angleMiddle = startAngleOuter + sweepAngleOuter / 2.0
                             
@@ -436,6 +434,24 @@ public class PieChartRenderer: ChartDataRendererBase
                     // draw the hole-circle
                     CGContextSetFillColorWithColor(context, chart.holeColor!.CGColor)
                     CGContextFillEllipseInRect(context, CGRect(x: center.x - holeRadius, y: center.y - holeRadius, width: holeRadius * 2.0, height: holeRadius * 2.0))
+                    
+                   // 在所画的中间圆上覆盖一个按钮
+                    if(centerButton == nil){
+                        centerButton = UIButton(type:UIButtonType.Custom)
+            
+                    }
+                    let btnWH : CGFloat = holeRadius * 2
+            
+                    centerButton!.frame = CGRectMake(center.x - holeRadius, center.y - holeRadius, btnWH, btnWH)
+                    centerButton!.backgroundColor = UIColor.clearColor()
+//                    centerButton!.backgroundColor = UIColor.greenColor()
+                    centerButton!.layer.cornerRadius = holeRadius
+//                    centerButton!.layer.masksToBounds = true
+                    centerButton!.clipsToBounds = true
+                    
+                    centerButton!.addTarget(self, action:Selector("centerBtnDidClicked"), forControlEvents: UIControlEvents.TouchUpInside)
+                    
+                    chart.addSubview(centerButton!)
                 }
             }
             
@@ -470,6 +486,11 @@ public class PieChartRenderer: ChartDataRendererBase
             
             CGContextRestoreGState(context)
         }
+    }
+    
+    //中间按钮的点击事件发出通知
+    func centerBtnDidClicked(){
+    NSNotificationCenter.defaultCenter().postNotificationName("centerBtnDidClicked", object: nil);
     }
     
     /// draws the description text in the center of the pie chart makes most sense when center-hole is enabled
@@ -579,8 +600,6 @@ public class PieChartRenderer: ChartDataRendererBase
             let shift = set.selectionShift
             let highlightedRadius = radius + shift
             
-            let accountForSliceSpacing = sliceSpace > 0.0 && sliceAngle <= 180.0
-            
             CGContextSetFillColorWithColor(context, set.colorAt(xIndex).CGColor)
             
             let sliceSpaceAngleOuter = visibleAngleCount == 1 ?
@@ -622,7 +641,7 @@ public class PieChartRenderer: ChartDataRendererBase
                 sweepAngleShifted * ChartUtils.Math.FDEG2RAD)
             
             var sliceSpaceRadius: CGFloat = 0.0
-            if accountForSliceSpacing
+            if sliceSpace > 0.0
             {
                 sliceSpaceRadius = calculateMinimumRadiusForSpacedSlice(
                     center: center,
@@ -635,16 +654,16 @@ public class PieChartRenderer: ChartDataRendererBase
             }
             
             if drawInnerArc &&
-                (innerRadius > 0.0 || accountForSliceSpacing)
+                (innerRadius > 0.0 || sliceSpace > 0.0)
             {
-                if accountForSliceSpacing
+                if sliceSpace > 0.0
                 {
                     var minSpacedRadius = sliceSpaceRadius
                     if minSpacedRadius < 0.0
                     {
                         minSpacedRadius = -minSpacedRadius
                     }
-                    innerRadius = min(max(innerRadius, minSpacedRadius), radius)
+                    innerRadius = max(innerRadius, minSpacedRadius)
                 }
                 
                 let sliceSpaceAngleInner = visibleAngleCount == 1 || innerRadius == 0.0 ?
@@ -674,7 +693,7 @@ public class PieChartRenderer: ChartDataRendererBase
             }
             else
             {
-                if accountForSliceSpacing
+                if sliceSpace > 0.0
                 {
                     let angleMiddle = startAngleOuter + sweepAngleOuter / 2.0
                     
@@ -707,3 +726,4 @@ public class PieChartRenderer: ChartDataRendererBase
         CGContextRestoreGState(context)
     }
 }
+

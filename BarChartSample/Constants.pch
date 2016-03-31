@@ -1,0 +1,45 @@
+//
+//  Constants.pch
+//  BarChartSample
+//
+//  Created by IOS-Sun on 16/3/30.
+//  Copyright © 2016年 IOS-Sun. All rights reserved.
+//
+
+#ifndef Constants_pch
+#define Constants_pch
+
+#pragma mark -----------余额通 通用颜色--------------
+/*** 生成rgb 颜色的宏*/
+#define kColorWithRGB(r,g,b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) /255.0 alpha:1.0]
+
+/*** 饼状图上面的颜色的宏*/
+#define kColorInPieViewWithIndex01 [UIColor colorWithRed:69 / 255.0 green:193 / 255.0 blue:51 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex02 [UIColor colorWithRed:117 / 255.0 green:211 / 255.0 blue:34 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex03 [UIColor colorWithRed:177 / 255.0 green:244 / 255.0 blue:63 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex04 [UIColor colorWithRed:255 / 255.0 green:194 / 255.0 blue:57 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex05 [UIColor colorWithRed:255 / 255.0 green:148 / 255.0 blue:8 /255.0 alpha:1.0]
+
+#define kColorInPieViewWithIndex06 [UIColor colorWithRed:255 / 255.0 green:91 / 255.0 blue:0 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex07 [UIColor colorWithRed:244 / 255.0 green:63 / 255.0 blue:0 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex08 [UIColor colorWithRed:80 / 255.0 green:134 / 255.0 blue:214 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex09 [UIColor colorWithRed:82 / 255.0 green:177 / 255.0 blue:255 /255.0 alpha:1.0]
+#define kColorInPieViewWithIndex10 [UIColor colorWithRed:74 / 255.0 green:211 / 255.0 blue:221 /255.0 alpha:1.0]
+
+/*** 饼状图上面的颜色数组宏*/
+#define kColorInPieViewWithArray(index) [NSMutableArray arrayWithObjects:[UIColor colorWithRed:69 / 255.0 green:193 / 255.0 blue:51 /255.0 alpha:1.0],[UIColor colorWithRed:117 / 255.0 green:211 / 255.0 blue:34 /255.0 alpha:1.0],[UIColor colorWithRed:177 / 255.0 green:244 / 255.0 blue:63 /255.0 alpha:1.0],[UIColor colorWithRed:255 / 255.0 green:194 / 255.0 blue:57 /255.0 alpha:1.0],[UIColor colorWithRed:255 / 255.0 green:148 / 255.0 blue:8 /255.0 alpha:1.0],[UIColor colorWithRed:255 / 255.0 green:91 / 255.0 blue:0 /255.0 alpha:1.0],[UIColor colorWithRed:244 / 255.0 green:63 / 255.0 blue:0 /255.0 alpha:1.0],[UIColor colorWithRed:80 / 255.0 green:134 / 255.0 blue:214 /255.0 alpha:1.0],[UIColor colorWithRed:82 / 255.0 green:177 / 255.0 blue:255 /255.0 alpha:1.0],[UIColor colorWithRed:74 / 255.0 green:211 / 255.0 blue:221 /255.0 alpha:1.0],nil][index]
+
+/*** 柱图上面的颜色的宏*/
+#define kColorInBarViewWithIndex01 [UIColor colorWithRed:51 / 255.0 green:178/ 255.0 blue:242 /255.0 alpha:1.0]
+#define kColorInBarViewWithIndex02 [UIColor colorWithRed:37 / 255.0 green:216/ 255.0 blue:229 /255.0 alpha:1.0]
+#define kColorInBarViewWithIndex03 [UIColor colorWithRed:161 / 255.0 green:211 / 255.0 blue:49 /255.0 alpha:1.0]
+
+/*** 导航栏背景颜色*/
+#define Nav_backgroundCloor  [UIColor colorWithRed:64/255.0 green:128/255.0 blue:244 / 255.0 alpha:1.0]
+/*** 底部工具栏的背景颜色*/
+#define BottomTabbarBackgroundColor [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0]
+#define BottomTabbarLineViewColor [UIColor colorWithRed:211 / 255.0 green:211 / 255.0 blue:211 / 255.0 alpha:1.0]
+/*** 中间饼状图背景颜色*/
+#define MidPieViewBackgroundColor [UIColor colorWithRed:240 / 255.0 green:240 / 255.0 blue:240 / 255.0 alpha:1.0]
+
+#endif /* Constants_pch */

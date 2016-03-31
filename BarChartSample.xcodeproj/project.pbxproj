@@ -85,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C02E4031CABC2BF005427B2 /* Constants.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.pch; path = BarChartSample/Constants.pch; sourceTree = SOURCE_ROOT; };
 		5C1224951CAA78FE00B8E23B /* PieChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartViewController.h; sourceTree = "<group>"; };
 		5C1224961CAA78FE00B8E23B /* PieChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartViewController.m; sourceTree = "<group>"; };
 		5C1224971CAA78FE00B8E23B /* PieChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartViewController.xib; sourceTree = "<group>"; };
@@ -163,6 +164,7 @@
 				5CE55B991C9BFD1C00BA3071 /* Components */,
 				5CE55BA21C9BFD1D00BA3071 /* Demos */,
 				5CE55B821C9BF47000BA3071 /* Test.swift */,
+				5C02E4031CABC2BF005427B2 /* Constants.pch */,
 				5CE55B731C9BF3FF00BA3071 /* Main.storyboard */,
 				5CE55B761C9BF3FF00BA3071 /* Assets.xcassets */,
 				5CE55B781C9BF3FF00BA3071 /* LaunchScreen.storyboard */,
@@ -410,6 +412,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -452,6 +455,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -473,6 +477,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BarChartSample/Constants.pch;
 				INFOPLIST_FILE = BarChartSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.BarChartSample;
@@ -489,6 +495,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BarChartSample/Constants.pch;
 				INFOPLIST_FILE = BarChartSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sh.BarChartSample;

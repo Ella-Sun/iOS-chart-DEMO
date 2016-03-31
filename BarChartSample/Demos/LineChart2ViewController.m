@@ -57,32 +57,33 @@
     _chartView.drawGridBackgroundEnabled = NO;
     _chartView.pinchZoomEnabled = YES;
     
-    _chartView.backgroundColor = [UIColor colorWithWhite:204/255.f alpha:1.f];
+    _chartView.backgroundColor = [UIColor whiteColor];
     
     /**<  图例  >**/
     _chartView.legend.form = ChartLegendFormLine;
     _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
     _chartView.legend.textColor = UIColor.blackColor;
-    _chartView.legend.position = ChartLegendPositionLeftOfChartInside;
+    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
     
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
-    xAxis.labelTextColor = UIColor.whiteColor;
+    xAxis.labelTextColor = UIColor.blackColor;
 //    xAxis.drawGridLinesEnabled = NO; /**<  是否显示横线  >**/
     xAxis.drawAxisLineEnabled = NO;/**<  是否显示X横坐标线  >**/
     xAxis.labelPosition = XAxisLabelPositionBottom;/**<  X轴显示位置  >**/
     xAxis.spaceBetweenLabels = 1.0;
     
     ChartYAxis *leftAxis = _chartView.leftAxis;
-    leftAxis.labelTextColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
-    leftAxis.customAxisMax = 200.0;
+//    leftAxis.labelTextColor =[UIColor blackColor];
+//    leftAxis.customAxisMax = 200.0;
+//    leftAxis.startAtZeroEnabled = NO;
     leftAxis.drawGridLinesEnabled = YES;
     
 //    _chartView.rightAxis.enabled = NO;
     ChartYAxis *rightAxis = _chartView.rightAxis;
-    rightAxis.labelTextColor = UIColor.redColor;
+//    rightAxis.labelTextColor = UIColor.redColor;
 //    rightAxis.customAxisMax = 900.0;
-    rightAxis.startAtZeroEnabled = NO;
+//    rightAxis.startAtZeroEnabled = NO;
 //    rightAxis.customAxisMin = -200.0;
     rightAxis.drawGridLinesEnabled = NO;
     
@@ -90,7 +91,7 @@
     _sliderY.value = 1030.0;
     [self slidersValueChanged:nil];
     
-    [_chartView animateWithXAxisDuration:2.5];
+//    [_chartView animateWithXAxisDuration:2.5];
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,7 +102,7 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
-    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:1.0] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
+    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:0.8] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
     marker.minimumSize = CGSizeMake(80.f, 40.f);
     NSArray * barTexts = @[@"收:",@"支:"];
     NSMutableArray * barText1 = [NSMutableArray array];
@@ -152,34 +153,46 @@
     _chartView.leftAxis.startAtZeroEnabled = isNav;
     
     /**<  设置点的属性  >**/
-    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet 1"];
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"收入"];
     set1.axisDependency = AxisDependencyLeft;/**<  Y轴坐标依赖 左侧  >**/
-    [set1 setColor:[UIColor blackColor]];/**<  线的颜色  >**/
+    [set1 setColor:UIColor.blackColor];/**<  线的颜色  >**/
     [set1 setCircleColor:UIColor.whiteColor];/**<  点的颜色  >**/
-    set1.lineWidth = 2.0;/**<  折现宽  >**/
+    set1.lineWidth = 2.0;/**<  折线宽  >**/
     set1.circleRadius = 3.0;/**<  圆点大小  >**/
+    /**<  是否显示数值  >**/
+//    set1.drawValuesEnabled = NO;
+    /**<  折线是曲面还是直线(YES为曲面)  >**/
+//    set1.drawCubicEnabled = YES;
+    /**<  下方是否填充颜色  >**/
+    set1.drawFilledEnabled = YES;
+    /**<  填充颜色的透明度  >**/
     set1.fillAlpha = 65/255.0;
-    /**<  折线的颜色  >**/
-    set1.fillColor = [UIColor colorWithRed:51/255.f green:181/255.f blue:229/255.f alpha:1.f];
+    /**<  填充的颜色  >**/
+    set1.fillColor = kColorInBarViewWithIndex01;
     /**<  移动虚线属性设置  >**/
-    set1.highlightLineWidth = 1;
+    set1.highlightLineWidth = .5;
     set1.highlightLineDashLengths = @[@15.0,@10.0];
-    set1.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
+    set1.highlightColor = [UIColor blackColor];
     set1.drawCircleHoleEnabled = NO;
     
     
-    LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithYVals:yVals2 label:@"DataSet 2"];
+    LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithYVals:yVals2 label:@"支出"];
     set2.axisDependency = AxisDependencyRight;
-    [set2 setColor:UIColor.redColor];
+    [set2 setColor:UIColor.blackColor];
     [set2 setCircleColor:UIColor.whiteColor];
     set2.lineWidth = 2.0;
     set2.circleRadius = 3.0;
+//    set2.drawValuesEnabled = NO;
+//    set2.drawCubicEnabled = YES;
+    
+    set2.drawFilledEnabled = YES;
     set2.fillAlpha = 65/255.0;
-    set2.fillColor = UIColor.redColor;
+    set2.fillColor = kColorInBarViewWithIndex03;//UIColor.redColor;
+    
     /**<  移动虚线  >**/
-    set2.highlightLineWidth = 1;
+    set2.highlightLineWidth = .5;
     set2.highlightLineDashLengths = @[@15.0,@10.0];
-    set2.highlightColor = [UIColor colorWithRed:244/255.f green:117/255.f blue:117/255.f alpha:1.f];
+    set2.highlightColor = [UIColor blackColor];
     set2.drawCircleHoleEnabled = NO;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
@@ -187,10 +200,11 @@
     [dataSets addObject:set2];
     
     LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
-    [data setValueTextColor:UIColor.whiteColor];
+    [data setValueTextColor:UIColor.blackColor];
     [data setValueFont:[UIFont systemFontOfSize:9.f]];
     
     _chartView.data = data;
+    [_chartView animateWithXAxisDuration:3.0 yAxisDuration:3.0];
 }
 
 - (void)optionTapped:(NSString *)key

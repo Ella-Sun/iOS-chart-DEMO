@@ -130,11 +130,24 @@
         [xVals addObject:parties[i % parties.count]]; // 每块下面描述（从parties数组中取描述元素）
     }
     
+//    for (int i = 0; i < 4; i++)
+//    {
+//        [yVals1 addObject:[[BarChartDataEntry alloc] initWithValue:1 xIndex:i]]; // 每块所占百分比(随机)
+//    }
+//    
+//    NSMutableArray *xVals = [[NSMutableArray alloc] init];
+//    
+//    for (int i = 0; i < count; i++)
+//    {
+//        [xVals addObject:parties[i % parties.count]]; // 每块下面描述（从parties数组中取描述元素）
+//    }
+    
     PieChartDataSet *dataSet = [[PieChartDataSet alloc] initWithYVals:yVals1 label:@"Election Results"];
     dataSet.sliceSpace = 2.0; // 饼状图中块与块之间的距离
     
     // add a lot of colors
     // 添加许多颜色，然后根据块数自动在数组中从头开始取出
+    //TODO: 添加颜色
     NSMutableArray *colors = [[NSMutableArray alloc] init];
     [colors addObjectsFromArray:ChartColorTemplates.vordiplom];
     [colors addObjectsFromArray:ChartColorTemplates.joyful];
@@ -225,74 +238,6 @@
     [super handleOption:key forChartView:_chartView];
 }
 
-/**********************************************************/
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-//    
-////    self.isNoReloadData = YES;
-////    
-////    if (isAutoRotation) {
-////        return;
-////    }
-//    
-////    isTapStopped = IS_ZERO_FLOAT(mDragSpeed);
-//    
-////    if ([mDecelerateTimer isValid]) {
-////        [mDecelerateTimer invalidate];
-////        mDecelerateTimer = nil;
-////        mDragSpeed = 0;
-////        isAnimating = NO;
-////    }
-//    
-//    UITouch *touch   = [touches anyObject];
-//    self.mAbsoluteTheta   = [self thetaForTouch:touch onView:_chartView.superview];
-//    self.mRelativeTheta   = [self thetaForTouch:touch onView:_chartView];
-////    mDragBeforeDate  = [NSDate date];
-////    mDragBeforeTheta = 0.0f;
-//    
-////    if (IS_ZERO_FLOAT(mDragSpeed)) {
-////        if (isTapStopped) {
-////            [self tapStopped];
-////        } else {
-////        }
-////    }
-//    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"pieViewDidClickedNoti" object:nil];
-//    return;
-//}
-//
-//- (float)thetaForTouch:(UITouch *)touch onView:view {
-//    
-//    CGPoint location = [touch locationInView:view];
-//    float xOffset    = _chartView.bounds.size.width / 2;
-//    float yOffset    = _chartView.bounds.size.height / 2;
-//    float centeredX  = location.x - xOffset;
-//    float centeredY  = location.y - yOffset;
-//    
-//    return [self thetaForX:centeredX andY:centeredY];
-//}
-//
-//- (float)thetaForX:(float)x andY:(float)y {
-//    if (IS_ZERO_FLOAT(y)) {
-//        if (x < 0) {
-//            return M_PI;
-//        } else {
-//            return 0;
-//        }
-//    }
-//    
-//    float theta = atan(y / x);
-//    if (x < 0 && y > 0) {
-//        theta = M_PI + theta;
-//    } else if (x < 0 && y < 0) {
-//        theta = M_PI + theta;
-//    } else if (x > 0 && y < 0) {
-//        theta = 2 * M_PI + theta;
-//    }
-//    
-//    self.angel = theta;
-//    return theta;
-//}
-
-/**********************************************************/
 #pragma mark - Actions
 
 - (IBAction)slidersValueChanged:(id)sender
@@ -307,10 +252,29 @@
 
 - (void)chartValueSelected:(ChartViewBase * __nonnull)chartView entry:(ChartDataEntry * __nonnull)entry dataSetIndex:(NSInteger)dataSetIndex highlight:(ChartHighlight * __nonnull)highlight
 {
-    //旋转
-    [_chartView spinWithDuration:2.0 fromAngle:_chartView.rotationAngle toAngle:_chartView.rotationAngle + 90.f];
+    double angles = ([_chartView.absoluteAngles[entry.xIndex] longLongValue])/2;
     
-    NSLog(@"********chartView=%@***********,********entry=%@***********,********dataSetIndex=%zd********,**********highlight=%@************",chartView,entry,dataSetIndex,highlight);
+    if(entry.xIndex > 0)
+    {
+        angles = angles-([_chartView.absoluteAngles[entry.xIndex-1] longLongValue])/2;
+        angles = angles + [_chartView.absoluteAngles[entry.xIndex-1] longLongValue];
+    }
+//    angles += _chartView.rotationAngle;
+//    angles = (int)angles % 360;
+    NSLog(@"-----%lf",angles);
+    
+    if(270.0 <= angles && angles <= 360.0){
+        
+        angles = 90 + 360 - angles;
+    }else{
+        
+        angles = 90 - angles;
+    }
+//    angles = 90 - angles;
+    [_chartView spinWithDuration:1.0 fromAngle:_chartView.rotationAngle toAngle:angles];
+    NSLog(@"=======%lf =======%lf",angles,_chartView.rotationAngle);
+    
+//    NSLog(@"********chartView=%@***********,********entry=%@***********,********dataSetIndex=%zd********,**********highlight=%@************",chartView,entry,dataSetIndex,highlight);
     
     NSLog(@"chartValueSelected");
 }

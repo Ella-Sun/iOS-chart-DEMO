@@ -47,7 +47,7 @@
     
     _chartView.delegate = self;
     
-    _chartView.descriptionText = @"sdfafgrrrrrrrr";
+    _chartView.descriptionText = @" ";
     _chartView.noDataTextDescription = @"You need to provide data for the chart.";
     
     _chartView.pinchZoomEnabled = NO;
@@ -97,7 +97,7 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
-    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:1.0] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
+    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:0.8] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
     marker.minimumSize = CGSizeMake(80.f, 40.f);
     NSArray * barTexts = @[@"净:",@"收:",@"支:"];
     NSMutableArray * barText1 = [NSMutableArray array];
@@ -155,21 +155,21 @@
     _chartView.leftAxis.startAtZeroEnabled = isNav;
     
     //多组 每一组一个属性设置
-    BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals1 label:@"Company A"];
-    [set1 setColor:[UIColor colorWithRed:104/255.f green:241/255.f blue:175/255.f alpha:1.f]];
-    set1.drawValuesEnabled = NO;
+    BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals1 label:@"净收入"];
+    [set1 setColor:kColorInBarViewWithIndex01];
+//    set1.drawValuesEnabled = NO;
     set1.barSpace = 0.35;
     set1.highlightLineWidth = 1.0;
     set1.highlightLineDashLengths = @[@15.0f,@12.0f];
-    BarChartDataSet *set2 = [[BarChartDataSet alloc] initWithYVals:yVals2 label:@"Company B"];
-    [set2 setColor:[UIColor colorWithRed:164/255.f green:228/255.f blue:251/255.f alpha:1.f]];
-    set2.drawValuesEnabled = NO;
+    BarChartDataSet *set2 = [[BarChartDataSet alloc] initWithYVals:yVals2 label:@"收 入"];
+    [set2 setColor:kColorInBarViewWithIndex02];
+//    set2.drawValuesEnabled = NO;
     set2.barSpace = 0.35;
     set2.highlightLineWidth = 1.0;
     set2.highlightLineDashLengths = @[@15.0f,@12.0f];
-    BarChartDataSet *set3 = [[BarChartDataSet alloc] initWithYVals:yVals3 label:@"Company C"];
-    [set3 setColor:[UIColor colorWithRed:242/255.f green:247/255.f blue:158/255.f alpha:1.f]];
-    set3.drawValuesEnabled = NO;
+    BarChartDataSet *set3 = [[BarChartDataSet alloc] initWithYVals:yVals3 label:@"支 出"];
+    [set3 setColor:kColorInBarViewWithIndex03];
+//    set3.drawValuesEnabled = NO;
     set3.barSpace = 0.35;
     set3.highlightLineWidth = 1.0;
     set3.highlightLineDashLengths = @[@15.0f,@12.0f];
@@ -182,7 +182,10 @@
     BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSets:dataSets];
     //一组多个时 设置
     data.groupSpace = 0.8;
-    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:10.f]];
+    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:9.f]];
+    data.highlightEnabled = YES;
+    [data setValueTextColor:UIColor.blackColor];
+    [data setValueFont:[UIFont systemFontOfSize:9.f]];
     
     _chartView.data = data;
     [_chartView animateWithYAxisDuration:3.0];

@@ -162,9 +162,8 @@
     
     //TODO: 改变 图例 的说明(label)
     BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals label:@"DataSet"];
-    set1.drawValuesEnabled = NO;
     set1.barSpace = 0.35;
-    set1.highlightLineWidth = 1.0;
+    set1.highlightLineWidth = 1.5;
     set1.highlightLineDashLengths = @[@15.0f,@12.0f];
     /**<  是否显示柱状图的详细数据  >**/
 //    set1.drawValuesEnabled = NO;
@@ -173,8 +172,10 @@
     [dataSets addObject:set1];
     
     BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSets:dataSets];
-    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:10.f]];
+    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:9.f]];
     data.highlightEnabled = YES;
+    [data setValueTextColor:UIColor.blackColor];
+    [data setValueFont:[UIFont systemFontOfSize:9.f]];
     
     _chartView.data = data;
     

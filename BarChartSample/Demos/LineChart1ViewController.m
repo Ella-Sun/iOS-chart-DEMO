@@ -58,7 +58,7 @@
     [_chartView setScaleEnabled:YES];
     _chartView.pinchZoomEnabled = YES; // yes的时候x 和 y轴均可缩放
     _chartView.drawGridBackgroundEnabled = NO; // 是否绘制网络背景
-    _chartView.backgroundColor= [UIColor lightGrayColor];
+    _chartView.backgroundColor= [UIColor whiteColor];
 
 //     x-axis limit line
 //    ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:10.0 label:@"Index 10"];
@@ -72,7 +72,7 @@
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
     xAxis.labelTextColor = [UIColor blackColor];
-    xAxis.drawGridLinesEnabled = NO;
+//    xAxis.drawGridLinesEnabled = NO;
     xAxis.drawAxisLineEnabled = NO;
     xAxis.spaceBetweenLabels = 1.0;
     xAxis.labelPosition = ChartLimitLabelPositionLeftBottom;
@@ -109,15 +109,15 @@
     [_chartView.viewPortHandler setMaximumScaleY: 2.f];
     [_chartView.viewPortHandler setMaximumScaleX: 2.f];
     
-    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:1.0] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
+    BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:0.8] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
     marker.minimumSize = CGSizeMake(80.f, 40.f);
     _chartView.marker = marker;
     
     //右上角描述
     _chartView.legend.form = ChartLegendFormLine;
-    _chartView.legend.position = ChartLegendPositionAboveChartRight;
-    
-    _sliderX.value = 20.0;
+    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
+     
+    _sliderX.value = 11.0;
     _sliderY.value = 200.0;
     [self slidersValueChanged:nil];
     
@@ -160,20 +160,21 @@
     }
     
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet"];
-    set1.highlightLineDashLengths = @[@5.f, @2.5f]; // 点击后出现水平和竖直虚线长度和间隙长度
-    set1.highlightLineWidth = 1.0; //点击后水平和竖直虚线宽度
-    set1.highlightColor = [UIColor orangeColor]; //点击后水平和竖直虚线颜色
+    set1.highlightLineDashLengths = @[@15.f, @10.f]; // 点击后出现水平和竖直虚线长度和间隙长度
+    set1.highlightLineWidth = .5; //点击后水平和竖直虚线宽度
+    set1.highlightColor = [UIColor blackColor]; //点击后水平和竖直虚线颜色
     
-    set1.lineDashLengths = @[@5.f, @2.5f]; // 折线线段长度 和 间隙长度
+//    set1.lineDashLengths = @[@5.f, @2.5f]; // 折线线段长度 和 间隙长度
     [set1 setColor:UIColor.blackColor]; // 折线的颜色
-    [set1 setCircleColor:UIColor.blackColor]; // 拐点点的颜色
-    set1.lineWidth = 1.0; // 线宽
+    [set1 setCircleColor:UIColor.whiteColor]; // 拐点点的颜色
+    set1.lineWidth = 2.0; // 线宽
     set1.circleRadius = 3.0; // 拐点半径
+//    set1.drawCubicEnabled = YES;
     set1.drawCircleHoleEnabled = NO; // NO 为实心圆，yes 为空心圆
     set1.valueFont = [UIFont systemFontOfSize:9.f]; // 点上面的值得大小
-    //set1.fillAlpha = 65/255.0;
-    //set1.fillColor = UIColor.blackColor;
-    
+    set1.fillAlpha = 65/255.0;
+    set1.fillColor = kColorInBarViewWithIndex01;//UIColor.blackColor;
+    /*
     NSArray *gradientColors = @[
                         (id)[ChartColorTemplates colorFromString:@"#00ff0000"].CGColor,
                         (id)[ChartColorTemplates colorFromString:@"#ffff0000"].CGColor
@@ -182,21 +183,24 @@
     
     set1.fillAlpha = 1.f;
     set1.fill = [ChartFill fillWithLinearGradient:gradient angle:90.f];
+     */
     set1.drawFilledEnabled = YES; // 画折线下面的彩色阴影
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];
     
     LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
+    [data setValueTextColor:UIColor.blackColor];
+    [data setValueFont:[UIFont systemFontOfSize:9.f]];
     
     _chartView.data = data;
     
     // 设置折线图样式
-    for (id<ILineChartDataSet> set in _chartView.data.dataSets)
-    {
-        set.drawCubicEnabled = YES;
-        set.drawValuesEnabled = NO;
-    }
+//    for (id<ILineChartDataSet> set in _chartView.data.dataSets)
+//    {
+//        set.drawCubicEnabled = YES;
+//        set.drawValuesEnabled = NO;
+//    }
     
     [_chartView animateWithXAxisDuration:3.0 yAxisDuration:3.0];
 }

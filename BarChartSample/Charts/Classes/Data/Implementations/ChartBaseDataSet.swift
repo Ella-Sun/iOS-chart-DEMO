@@ -15,13 +15,11 @@
 import Foundation
 import CoreGraphics
 
-
 public class ChartBaseDataSet: NSObject, IChartDataSet
 {
     public required override init()
     {
         super.init()
-        //TODO: 默认barChart背景颜色
         // default color
         colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
         valueColors.append(NSUIColor.blackColor())
@@ -30,9 +28,9 @@ public class ChartBaseDataSet: NSObject, IChartDataSet
     public init(label: String?)
     {
         super.init()
-        
+        //TODO: 默认的柱子颜色
         // default color
-        colors.append(NSUIColor(red: 140.0/255.0, green: 234.0/255.0, blue: 255.0/255.0, alpha: 1.0))
+        colors.append(NSUIColor(red: 51.0/255.0, green: 178.0/255.0, blue: 244.0/255.0, alpha: 1.0))
         valueColors.append(NSUIColor.blackColor())
         
         self.label = label
