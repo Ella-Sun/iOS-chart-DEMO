@@ -157,6 +157,7 @@ public class ChartYAxisRendererHorizontalBarChart: ChartYAxisRenderer
     /// draws the y-labels on the specified x-position
     public func drawYLabels(context context: CGContext, fixedPosition: CGFloat, positions: [CGPoint], offset: CGFloat)
     {
+        //Y label
         guard let yAxis = yAxis else { return }
         
         let labelFont = yAxis.labelFont
