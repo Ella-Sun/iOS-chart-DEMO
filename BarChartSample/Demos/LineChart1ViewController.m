@@ -95,14 +95,20 @@
 
     // y 轴上的一些设置
     ChartYAxis *leftAxis = _chartView.leftAxis;
+    /**<  警戒线  >**/
     [leftAxis removeAllLimitLines];
+    /**<  警戒线  >**/
     [leftAxis addLimitLine:ll1];
 //    [leftAxis addLimitLine:ll2];
-    leftAxis.customAxisMax = 200.0;
-    leftAxis.customAxisMin = -50.0;
     leftAxis.gridLineDashLengths = @[@5.f, @5.f]; // 平行于x 轴的虚线长度 和间隙
-    leftAxis.drawZeroLineEnabled = NO;
+//    leftAxis.drawZeroLineEnabled = NO;
+    /**<  非常重要 加警戒线  >**/
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
+    leftAxis.labelTextColor =[UIColor blackColor];
+//    leftAxis.customAxisMax = 200.0;
+//    leftAxis.customAxisMin = 100.0;
+    leftAxis.startAtZeroEnabled = NO;
+    leftAxis.drawGridLinesEnabled = NO;
     
     _chartView.rightAxis.enabled = NO;
     
@@ -115,13 +121,11 @@
     
     //右上角描述
     _chartView.legend.form = ChartLegendFormLine;
-    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
-     
-    _sliderX.value = 11.0;
-    _sliderY.value = 200.0;
-    [self slidersValueChanged:nil];
+//    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
     
-    [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutQuart];
+    _sliderX.value = 11.0;
+    _sliderY.value = 2000000.0;
+    [self slidersValueChanged:nil];
 }
 
 - (void)didReceiveMemoryWarning

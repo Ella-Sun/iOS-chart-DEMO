@@ -71,13 +71,13 @@
     xAxis.labelPosition = UIBarPositionBottom;
     xAxis.labelFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.f];
     
-    /**
-     *  设置这个属性 横线消失
-     */
     ChartYAxis *leftAxis = _chartView.leftAxis;
     leftAxis.labelFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:10.f];
     leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
     leftAxis.valueFormatter.maximumFractionDigits = 1;
+    /**
+     *  设置这个属性 横线消失
+     */
     leftAxis.drawGridLinesEnabled = NO;
     leftAxis.spaceTop = 0.25;
     

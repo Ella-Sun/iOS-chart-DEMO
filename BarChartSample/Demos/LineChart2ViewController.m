@@ -60,35 +60,35 @@
     _chartView.backgroundColor = [UIColor whiteColor];
     
     /**<  图例  >**/
-    _chartView.legend.form = ChartLegendFormLine;
-    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
-    _chartView.legend.textColor = UIColor.blackColor;
-    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
+//    _chartView.legend.form = ChartLegendFormLine;
+//    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
+//    _chartView.legend.textColor = UIColor.blackColor;
+//    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
     
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
     xAxis.labelTextColor = UIColor.blackColor;
-//    xAxis.drawGridLinesEnabled = NO; /**<  是否显示横线  >**/
-    xAxis.drawAxisLineEnabled = NO;/**<  是否显示X横坐标线  >**/
+//    xAxis.drawGridLinesEnabled = YES; /**<  是否显示横线  >**/
+//    xAxis.drawAxisLineEnabled = NO;/**<  是否显示X横坐标线  >**/
     xAxis.labelPosition = XAxisLabelPositionBottom;/**<  X轴显示位置  >**/
     xAxis.spaceBetweenLabels = 1.0;
     
     ChartYAxis *leftAxis = _chartView.leftAxis;
+    leftAxis.gridLineDashLengths = @[@5.f, @5.f];
 //    leftAxis.labelTextColor =[UIColor blackColor];
 //    leftAxis.customAxisMax = 200.0;
 //    leftAxis.startAtZeroEnabled = NO;
-    leftAxis.drawGridLinesEnabled = YES;
+//    leftAxis.drawGridLinesEnabled = NO;
     
-//    _chartView.rightAxis.enabled = NO;
-    ChartYAxis *rightAxis = _chartView.rightAxis;
+    _chartView.rightAxis.enabled = NO;
+//    ChartYAxis *rightAxis = _chartView.rightAxis;
 //    rightAxis.labelTextColor = UIColor.redColor;
-//    rightAxis.customAxisMax = 900.0;
-//    rightAxis.startAtZeroEnabled = NO;
 //    rightAxis.customAxisMin = -200.0;
-    rightAxis.drawGridLinesEnabled = NO;
+//    rightAxis.minWidth = 20;
+//    rightAxis.drawGridLinesEnabled = NO;
     
     _sliderX.value = 10.0;
-    _sliderY.value = 1030.0;
+    _sliderY.value = 1038080.0;
     [self slidersValueChanged:nil];
     
 //    [_chartView animateWithXAxisDuration:2.5];
@@ -123,34 +123,24 @@
     for (int i = 0; i < count; i++)
     {
         double mult = range / 2.0;
-        double val = (double) (arc4random_uniform(mult)) + 50;
+        double val = (double) (arc4random_uniform(mult)) + 5;
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
     for (int i = 0; i < count; i++)
     {
         double mult = range;
-        double val = (double) (arc4random_uniform(mult)) + 450;
+        double val = (double) (arc4random_uniform(mult)) + 45;
         [yVals2 addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
-    BOOL isNav = YES;
-    for (BarChartDataEntry *valEntry in yVals) {
-        if (valEntry.value < 0) {
-            isNav = NO;
-        }
-        [barText1 addObject:barTexts[0]];
-    }
-    for (BarChartDataEntry *valEntry in yVals2) {
-        if (valEntry.value < 0) {
-            isNav = NO;
-        }
-        [barText2 addObject:barTexts[1]];
-    }
+    [barText1 addObject:barTexts[0]];
+    [barText2 addObject:barTexts[1]];
+    
     [marker.barDescription addObject:barText1];
     [marker.barDescription addObject:barText2];
     _chartView.marker = marker;
-    _chartView.leftAxis.startAtZeroEnabled = isNav;
+//    _chartView.leftAxis.startAtZeroEnabled = isNav;
     
     /**<  设置点的属性  >**/
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"收入"];
@@ -175,9 +165,8 @@
     set1.highlightColor = [UIColor blackColor];
     set1.drawCircleHoleEnabled = NO;
     
-    
     LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithYVals:yVals2 label:@"支出"];
-    set2.axisDependency = AxisDependencyRight;
+    set2.axisDependency = AxisDependencyLeft;
     [set2 setColor:UIColor.blackColor];
     [set2 setCircleColor:UIColor.whiteColor];
     set2.lineWidth = 2.0;

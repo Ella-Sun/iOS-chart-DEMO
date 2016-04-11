@@ -146,6 +146,7 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
     /// draws the x-labels on the specified y-position
     public func drawLabels(context context: CGContext, pos: CGFloat, anchor: CGPoint)
     {
+                /// X轴坐标label
         guard let xAxis = xAxis else { return }
         
         let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle

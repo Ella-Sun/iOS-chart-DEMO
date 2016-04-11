@@ -259,6 +259,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
     /// draws the y-labels on the specified x-position
     internal func drawYLabels(context context: CGContext, fixedPosition: CGFloat, offset: CGFloat, textAlign: NSTextAlignment)
     {
+        ///Y轴坐标label
         guard let yAxis = yAxis else { return }
         
         let labelFont = yAxis.labelFont

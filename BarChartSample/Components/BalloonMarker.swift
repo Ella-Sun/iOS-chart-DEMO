@@ -55,37 +55,58 @@ public class BalloonMarker: ChartMarker
         rect.origin.x -= _size.width / 2.0
         rect.origin.y -= _size.height
         
+        let maxXpiex = rect.origin.x + rect.size.width
+        let APP_Width = UIScreen .mainScreen().bounds.size.width
+        var newXpiex = rect.origin.x
+        
+        if maxXpiex > APP_Width {
+            newXpiex = APP_Width - rect.size.width;
+        }
+        
         CGContextSaveGState(context)
         
         CGContextSetFillColorWithColor(context, color?.CGColor)
         CGContextBeginPath(context)
+        //left up
         CGContextMoveToPoint(context,
-            rect.origin.x,
+            newXpiex,
             rect.origin.y)
+        //right up
         CGContextAddLineToPoint(context,
-            rect.origin.x + rect.size.width,
+            newXpiex + rect.size.width,
             rect.origin.y)
+        //right down
         CGContextAddLineToPoint(context,
-            rect.origin.x + rect.size.width,
+            newXpiex + rect.size.width,
             rect.origin.y + rect.size.height - arrowSize.height)
+        //center point right
         CGContextAddLineToPoint(context,
             rect.origin.x + (rect.size.width + arrowSize.width) / 2.0,
             rect.origin.y + rect.size.height - arrowSize.height)
+        //center point
         CGContextAddLineToPoint(context,
             rect.origin.x + rect.size.width / 2.0,
             rect.origin.y + rect.size.height)
+        //center point left
         CGContextAddLineToPoint(context,
             rect.origin.x + (rect.size.width - arrowSize.width) / 2.0,
             rect.origin.y + rect.size.height - arrowSize.height)
+        //left down
         CGContextAddLineToPoint(context,
-            rect.origin.x,
+            newXpiex,
             rect.origin.y + rect.size.height - arrowSize.height)
+        //left up
         CGContextAddLineToPoint(context,
-            rect.origin.x,
+            newXpiex,
             rect.origin.y)
         CGContextFillPath(context)
         
         rect.origin.y += self.insets.top
+        
+        if maxXpiex > APP_Width {
+            rect.origin.x = newXpiex
+        }
+        
         rect.size.height -= self.insets.top + self.insets.bottom
         
         UIGraphicsPushContext(context)

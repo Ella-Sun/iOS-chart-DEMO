@@ -135,6 +135,7 @@ public class ChartUtils
         }
         
         NSUIGraphicsPushContext(context)
+        print(text);
         
         (text as NSString).drawAtPoint(point, withAttributes: attributes)
         

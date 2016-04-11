@@ -50,6 +50,7 @@
     _chartView.delegate = self;
     
     /**<  最大可见绘制值的数目  >**/
+    /**<  是否显示阴影  >**/
     _chartView.drawBarShadowEnabled = NO;
     
     /**<  柱状图的详细数据显示位置  >**/
@@ -61,7 +62,7 @@
     _chartView.drawHighlightArrowEnabled = YES;
     
     /**<  只能单独放大一个方向的坐标  >**/
-    _chartView.pinchZoomEnabled = NO;
+//    _chartView.pinchZoomEnabled = NO;
     
     /**<  启用自动缩放的标志  >**/
     _chartView.autoScaleMinMaxEnabled = YES;
@@ -70,12 +71,17 @@
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelPosition = XAxisLabelPositionBottom;
     xAxis.labelFont = [UIFont systemFontOfSize:10.f];
+    /**<  是否显示竖直的线  >**/
     xAxis.drawGridLinesEnabled = NO;
+    
+    xAxis.drawAxisLineEnabled = NO;
+    xAxis.gridAntialiasEnabled = NO;
     xAxis.spaceBetweenLabels = 2.0;
     
     /**<  左侧Y轴坐标  >**/
     ChartYAxis *leftAxis = _chartView.leftAxis;
-    leftAxis.startAtZeroEnabled = YES;
+//    leftAxis.startAtZeroEnabled = YES;
+    leftAxis.drawGridLinesEnabled = NO;
     leftAxis.labelFont = [UIFont systemFontOfSize:10.f];
     leftAxis.labelCount = 8;
     leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
