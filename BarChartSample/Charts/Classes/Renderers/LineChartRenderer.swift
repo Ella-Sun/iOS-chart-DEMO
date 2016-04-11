@@ -525,7 +525,7 @@ public class LineChartRenderer: LineRadarChartRenderer
                     {
                         continue
                     }
-                    
+                    //print:line 17,885
                     ChartUtils.drawText(context: context,
                         text: formatter.stringFromNumber(e.value)!,
                         point: CGPoint(

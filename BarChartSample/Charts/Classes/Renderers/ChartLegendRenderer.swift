@@ -424,6 +424,7 @@ public class ChartLegendRenderer: ChartRendererBase
     /// Draws the provided label at the given position.
     public func drawLabel(context context: CGContext, x: CGFloat, y: CGFloat, label: String, font: NSUIFont, textColor: NSUIColor)
     {
+        //print:DataSet
         ChartUtils.drawText(context: context, text: label, point: CGPoint(x: x, y: y), align: .Left, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: textColor])
     }
 }

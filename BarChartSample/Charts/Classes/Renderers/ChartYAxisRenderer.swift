@@ -284,7 +284,8 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             
             pt.x = fixedPosition
             pt.y += offset
-            
+            //print:line 0 ... 800,000 ... 1,600,000 ...
+            //print:bar  -6000 $
             ChartUtils.drawText(context: context, text: text, point: pt, align: textAlign, attributes: [NSFontAttributeName: labelFont, NSForegroundColorAttributeName: labelTextColor])
         }
     }
@@ -458,6 +459,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
                 
                 if (l.labelPosition == .RightTop)
                 {
+                    //print:Upper Limit
                     ChartUtils.drawText(context: context,
                         text: label,
                         point: CGPoint(

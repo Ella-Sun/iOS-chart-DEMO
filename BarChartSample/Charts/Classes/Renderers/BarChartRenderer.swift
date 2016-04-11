@@ -447,7 +447,7 @@ public class BarChartRenderer: ChartDataRendererBase
     
     /// Draws a value at the specified x and y position.
     public func drawValue(context context: CGContext, value: String, xPos: CGFloat, yPos: CGFloat, font: NSUIFont, align: NSTextAlignment, color: NSUIColor)
-    {
+    {//print:bar 33,600 ... -3,700
         ChartUtils.drawText(context: context, text: value, point: CGPoint(x: xPos, y: yPos), align: align, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: color])
     }
     
@@ -456,7 +456,7 @@ public class BarChartRenderer: ChartDataRendererBase
         
     }
     
-    private var _highlightArrowPtsBuffer = [CGPoint](count: 3, repeatedValue: CGPoint())
+    private var _highlightArrowPtsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     public override func drawHighlighted(context context: CGContext, indices: [ChartHighlight])
     {
@@ -582,15 +582,16 @@ public class BarChartRenderer: ChartDataRendererBase
                         CGContextSetLineDash(context, 0.0, [12.0, 10.0], 2)
                     }
                     
-//                    let low = CGFloat(e.low) * _animator.phaseY
-//                    let high = CGFloat(e.high) * _animator.phaseY
-                    let offsetY = viewPortHandler.chartHeight
-                    let yArrow = (y1 >= -y2 ? y1 : y1) * Double(offsetY)
-//                    let yArrow = (y1 >= -y2) ? viewPortHandler.contentBottom:viewPortHandler.contentTop
+//                    let offsetY = viewPortHandler.chartHeight
+//                    let yArrow = (y1 >= -y2 ? y1 : y1) * Double(offsetY)
+                    let yArrow = (y1 >= -y2) ? set.yMax : set.yMin;
+//                    let yZero = set.
+                    print(yArrow)
+                    
                     _highlightArrowPtsBuffer[0].x = CGFloat(x)
-                    _highlightArrowPtsBuffer[0].y = CGFloat(yArrow)// + offsetY
+                    _highlightArrowPtsBuffer[0].y = CGFloat(yArrow)*1.2
                     _highlightArrowPtsBuffer[1].x = CGFloat(x)
-                    _highlightArrowPtsBuffer[1].y = 0
+                    _highlightArrowPtsBuffer[1].y = 0.0
                     
                     trans.pointValuesToPixel(&_highlightArrowPtsBuffer)
                     
