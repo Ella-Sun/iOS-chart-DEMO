@@ -59,14 +59,6 @@
     _chartView.pinchZoomEnabled = YES; // yes的时候x 和 y轴均可缩放
     _chartView.drawGridBackgroundEnabled = NO; // 是否绘制网络背景
     _chartView.backgroundColor= [UIColor whiteColor];
-
-//     x-axis limit line
-//    ChartLimitLine *llXAxis = [[ChartLimitLine alloc] initWithLimit:10.0 label:@"Index 10"];
-//    llXAxis.lineWidth = 4.0;
-//    llXAxis.lineDashLengths = @[@(10.f), @(10.f), @(0.f)];
-//    llXAxis.labelPosition = ChartLimitLabelPositionRightBottom;
-//    llXAxis.valueFont = [UIFont systemFontOfSize:10.f];
-//    [_chartView.xAxis addLimitLine:llXAxis];
     
     //X轴上的描述
     ChartXAxis *xAxis = _chartView.xAxis;
@@ -86,13 +78,6 @@
     ll1.valueFont = [UIFont systemFontOfSize:10.0];
     self.currentLimieLint = ll1;
     
-//    ChartLimitLine *ll2 = [[ChartLimitLine alloc] initWithLimit:-30.0 label:@"Lower Limit"];
-//    ll2.lineWidth = 2.0;
-//    ll2.lineColor = [UIColor redColor];
-//    ll2.lineDashLengths = @[@5.f, @5.f];
-//    ll2.labelPosition = ChartLimitLabelPositionRightBottom;
-//    ll2.valueFont = [UIFont systemFontOfSize:10.0];
-
     // y 轴上的一些设置
     ChartYAxis *leftAxis = _chartView.leftAxis;
     /**<  警戒线  >**/
@@ -101,12 +86,9 @@
     [leftAxis addLimitLine:ll1];
 //    [leftAxis addLimitLine:ll2];
     leftAxis.gridLineDashLengths = @[@5.f, @5.f]; // 平行于x 轴的虚线长度 和间隙
-//    leftAxis.drawZeroLineEnabled = NO;
     /**<  非常重要 加警戒线  >**/
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
     leftAxis.labelTextColor =[UIColor blackColor];
-//    leftAxis.customAxisMax = 200.0;
-//    leftAxis.customAxisMin = 100.0;
     leftAxis.startAtZeroEnabled = NO;
     leftAxis.drawGridLinesEnabled = NO;
     
@@ -121,7 +103,6 @@
     
     //右上角描述
     _chartView.legend.form = ChartLegendFormLine;
-//    _chartView.legend.position = ChartLegendPositionRightOfChartInside;
     
     _sliderX.value = 11.0;
     _sliderY.value = 2000000.0;

@@ -168,11 +168,6 @@
     _optionsTableView.delegate = self;
     _optionsTableView.dataSource = self;
     
-    /**
-     *  如果是从代码层面开始使用Autolayout,需要对使用的View的translatesAutoresizingMaskIntoConstraints的属性设置为NO.
-     即可开始通过代码添加Constraint,否则View还是会按照以往的autoresizingMask进行计算.
-     而在Interface Builder中勾选了Ues Autolayout,IB生成的控件的translatesAutoresizingMaskIntoConstraints属性都会被默认设置NO.
-     */
     _optionsTableView.translatesAutoresizingMaskIntoConstraints = NO;
     
     NSMutableArray *constraints = [[NSMutableArray alloc] init];
