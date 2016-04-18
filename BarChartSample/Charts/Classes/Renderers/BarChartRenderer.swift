@@ -527,48 +527,9 @@ public class BarChartRenderer: ChartDataRendererBase
                 prepareBarHighlight(x: x, y1: y1, y2: y2, barspacehalf: barspaceHalf, trans: trans, rect: &barRect)
                 
                 CGContextFillRect(context, barRect)
-                //TODO: 绘制柱子旁边的箭头
                 if (drawHighlightArrowEnabled)
                 {
-                    /*
-                    CGContextSetAlpha(context, 1.0)
-                    
-                    // distance between highlight arrow and bar
-                    let offsetY = animator.phaseY * 0.07
-                    
-                    CGContextSaveGState(context)
-                    
-                    let pixelToValueMatrix = trans.pixelToValueMatrix
-                    let xToYRel = abs(sqrt(pixelToValueMatrix.b * pixelToValueMatrix.b + pixelToValueMatrix.d * pixelToValueMatrix.d) / sqrt(pixelToValueMatrix.a * pixelToValueMatrix.a + pixelToValueMatrix.c * pixelToValueMatrix.c))
-                    
-                    let arrowWidth = set.barSpace / 2.0
-                    let arrowHeight = arrowWidth * xToYRel
-                    
-                    let yArrow = (y1 > -y2 ? y1 : y1) * Double(animator.phaseY)
-                    
-                    _highlightArrowPtsBuffer[0].x = CGFloat(x) + 0.4
-                    _highlightArrowPtsBuffer[0].y = CGFloat(yArrow) + offsetY
-                    _highlightArrowPtsBuffer[1].x = CGFloat(x) + 0.4 + arrowWidth
-                    _highlightArrowPtsBuffer[1].y = CGFloat(yArrow) + offsetY - arrowHeight
-                    _highlightArrowPtsBuffer[2].x = CGFloat(x) + 0.4 + arrowWidth
-                    _highlightArrowPtsBuffer[2].y = CGFloat(yArrow) + offsetY + arrowHeight
-                    
-                    trans.pointValuesToPixel(&_highlightArrowPtsBuffer)
-                    
-                    CGContextBeginPath(context)
-                    CGContextMoveToPoint(context, _highlightArrowPtsBuffer[0].x, _highlightArrowPtsBuffer[0].y)
-                    CGContextAddLineToPoint(context, _highlightArrowPtsBuffer[1].x, _highlightArrowPtsBuffer[1].y)
-                    CGContextAddLineToPoint(context, _highlightArrowPtsBuffer[2].x, _highlightArrowPtsBuffer[2].y)
-                    CGContextClosePath(context)
-                    
-                    CGContextFillPath(context)
-                    
-                    CGContextRestoreGState(context)
-                } else {
-                    */
                     //TODO: 构建柱子中间的虚线，默认情况下显示虚线
-                    /// 待完善：虚线的显示不均匀(已解决)
-                    /// 待商榷：显示详情数据label 怎样显示 如何移动？
                     CGContextSetStrokeColorWithColor(context, set.highlightColor.CGColor)
                     CGContextSetLineWidth(context, set.highlightLineWidth)
                     

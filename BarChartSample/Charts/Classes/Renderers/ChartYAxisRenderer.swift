@@ -294,6 +294,8 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             let newText = getBackNewTextFromYpiex(text: text)
             ChartUtils.drawText(context: context, text: newText, point: pt, align: textAlign, attributes: [NSFontAttributeName: labelFont, NSForegroundColorAttributeName: labelTextColor])
         }
+        print(newText)
+        return newText
     }
     
     /**
