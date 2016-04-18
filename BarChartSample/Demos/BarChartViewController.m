@@ -86,8 +86,8 @@
     leftAxis.labelCount = 8;
     leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
     leftAxis.valueFormatter.maximumFractionDigits = 1;
-    leftAxis.valueFormatter.negativeSuffix = @" $";
-    leftAxis.valueFormatter.positiveSuffix = @" $";
+//    leftAxis.valueFormatter.negativeSuffix = @" $";
+//    leftAxis.valueFormatter.positiveSuffix = @" $";
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
     leftAxis.spaceTop = 0.15;
     
@@ -169,8 +169,13 @@
     //TODO: 改变 图例 的说明(label)
     BarChartDataSet *set1 = [[BarChartDataSet alloc] initWithYVals:yVals label:@"DataSet"];
     set1.barSpace = 0.35;
-    set1.highlightLineWidth = 1.5;
+    
+    //可以影响虚线
+    set1.highlightLineWidth = 3.0;
+//    (red: 215.0/255.0, green: 215.0/255.0, blue: 215.0/255.0, alpha: 1.0)
+//    self.view.backgroundColor = [UIColor colorWithRed:0.990 green:0.990 blue:0.995 alpha:1.000];
     set1.highlightLineDashLengths = @[@15.0f,@12.0f];
+    set1.highlightColor = [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000];
     /**<  是否显示柱状图的详细数据  >**/
 //    set1.drawValuesEnabled = NO;
     

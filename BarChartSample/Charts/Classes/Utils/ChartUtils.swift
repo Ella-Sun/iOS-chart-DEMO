@@ -135,10 +135,10 @@ public class ChartUtils
         }
         
         NSUIGraphicsPushContext(context)
-        print(text);
+//        print(text);
         
-        let len = text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
-        print(len)
+//        let len = text.characters.count//text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+//        print(len)
         //print:common
         (text as NSString).drawAtPoint(point, withAttributes: attributes)
         

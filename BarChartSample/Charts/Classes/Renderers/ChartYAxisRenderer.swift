@@ -184,9 +184,12 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
         if (dependency == .Left)
         {
             if (labelPosition == .OutsideChart)
-            {
+            {//YAxis
                 textAlign = .Right
-                xPos = viewPortHandler.offsetLeft - xoffset
+                /**
+                 *  TODO:改变Y轴坐标的位置
+                 */
+                xPos = viewPortHandler.offsetLeft*0.8// - xoffset*2
             }
             else
             {
@@ -286,10 +289,68 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             pt.y += offset
             //print:line 0 ... 800,000 ... 1,600,000 ...
             //print:bar  -6000 $
-            ChartUtils.drawText(context: context, text: text, point: pt, align: textAlign, attributes: [NSFontAttributeName: labelFont, NSForegroundColorAttributeName: labelTextColor])
+//            print(text)
+//            print(text.characters.count)
+            let newText = getBackNewTextFromYpiex(text: text)
+            ChartUtils.drawText(context: context, text: newText, point: pt, align: textAlign, attributes: [NSFontAttributeName: labelFont, NSForegroundColorAttributeName: labelTextColor])
         }
     }
     
+    /**
+     ToDo:createBy sunhong
+    
+     当数值大于万位，省略后边位数
+     */
+    public func getBackNewTextFromYpiex(text text: String) -> String
+    {
+        var newText = text
+        newText = newText.stringByReplacingOccurrencesOfString(",", withString: "")
+        newText = newText.stringByReplacingOccurrencesOfString("-", withString: "")
+        let len = newText.characters.count;
+        
+        let startWord: Character = text[text.startIndex]
+//        if len >= 1 {
+//            if startWord == "0" {
+//                return newText
+//            }
+        if len < 4 {
+            return newText
+        }
+//        }
+    
+        switch len {
+//        case 1:
+//            newText = "0.000" + newText
+//        case 2:
+//            let rRang = newText.endIndex.advancedBy(-1)..<newText.endIndex
+//            newText.removeRange(rRang)
+//            newText = "0.00" + newText
+//        case 3:
+//            let rRang = newText.endIndex.advancedBy(-2)..<newText.endIndex
+//            newText.removeRange(rRang)
+//            newText = "0.0" + newText
+        case 4:
+            let rRang = newText.endIndex.advancedBy(-3)..<newText.endIndex
+            newText.removeRange(rRang)
+            newText = "0." + newText
+        default:
+            let rRang = newText.endIndex.advancedBy(-3)..<newText.endIndex
+            newText.removeRange(rRang)
+            
+            let lRange = newText.endIndex.advancedBy(-1)..<newText.endIndex
+            let lastWord : String = newText[lRange]
+            newText.removeRange(lRange)
+            
+            newText = newText + "." + lastWord
+        }
+        
+        if startWord == "-" {
+            newText = "-" + newText
+        }
+        
+        return newText
+    }
+
     private var _gridLineBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     public override func renderGridLines(context context: CGContext)

@@ -337,7 +337,7 @@ public class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     /// draws the description text in the bottom right corner of the chart
     internal func drawDescription(context context: CGContext)
     {
-        if (descriptionText.lengthOfBytesUsingEncoding(NSUTF16StringEncoding) == 0)
+        if (descriptionText.characters.count == 0)
         {
             return
         }
