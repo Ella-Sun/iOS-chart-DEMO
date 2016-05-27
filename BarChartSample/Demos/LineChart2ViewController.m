@@ -68,7 +68,7 @@
     ChartXAxis *xAxis = _chartView.xAxis;
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
     xAxis.labelTextColor = UIColor.blackColor;
-//    xAxis.drawGridLinesEnabled = YES; /**<  是否显示横线  >**/
+//    xAxis.drawGridLinesEnabled = NO; /**<  是否显示竖线 >**/
 //    xAxis.drawAxisLineEnabled = NO;/**<  是否显示X横坐标线  >**/
     xAxis.labelPosition = XAxisLabelPositionBottom;/**<  X轴显示位置  >**/
     xAxis.spaceBetweenLabels = 1.0;
@@ -78,7 +78,7 @@
 //    leftAxis.labelTextColor =[UIColor blackColor];
 //    leftAxis.customAxisMax = 200.0;
 //    leftAxis.startAtZeroEnabled = NO;
-//    leftAxis.drawGridLinesEnabled = NO;
+//    leftAxis.drawGridLinesEnabled = NO;/**<  是否显示横线 >**/
     
     _chartView.rightAxis.enabled = NO;
 //    ChartYAxis *rightAxis = _chartView.rightAxis;
@@ -123,7 +123,7 @@
     for (int i = 0; i < count; i++)
     {
         double mult = range / 2.0;
-        double val = (double) (arc4random_uniform(mult)) + 5;
+        double val = (double) (arc4random_uniform(mult)) + 45;
         [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
@@ -145,10 +145,13 @@
     /**<  设置点的属性  >**/
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"收入"];
     set1.axisDependency = AxisDependencyLeft;/**<  Y轴坐标依赖 左侧  >**/
-    [set1 setColor:UIColor.blackColor];/**<  线的颜色  >**/
-    [set1 setCircleColor:UIColor.whiteColor];/**<  点的颜色  >**/
+    [set1 setColor:kColorInBarViewWithIndex01];/**<  线的颜色  >**/
     set1.lineWidth = 2.0;/**<  折线宽  >**/
+    
+    [set1 setCircleColor:kColorInBarViewWithIndex01];/**<  点的颜色  >**/
     set1.circleRadius = 3.0;/**<  圆点大小  >**/
+//    set1.drawCircleHoleEnabled = NO;//原点是空心还是实心
+    
     /**<  是否显示数值  >**/
 //    set1.drawValuesEnabled = NO;
     /**<  折线是曲面还是直线(YES为曲面)  >**/
@@ -163,17 +166,18 @@
     set1.highlightLineWidth = .5;
     set1.highlightLineDashLengths = @[@15.0,@10.0];
     set1.highlightColor = [UIColor blackColor];
-    set1.drawCircleHoleEnabled = NO;
     
     LineChartDataSet *set2 = [[LineChartDataSet alloc] initWithYVals:yVals2 label:@"支出"];
     set2.axisDependency = AxisDependencyLeft;
-    [set2 setColor:UIColor.blackColor];
-    [set2 setCircleColor:UIColor.whiteColor];
+    [set2 setCircleColor:kColorInBarViewWithIndex03];
     set2.lineWidth = 2.0;
-    set2.circleRadius = 3.0;
-//    set2.drawValuesEnabled = NO;
-//    set2.drawCubicEnabled = YES;
     
+    [set2 setColor:kColorInBarViewWithIndex03];
+    set2.circleRadius = 3.0;
+//    set2.drawCircleHoleEnabled = NO;
+    
+//    set2.drawValuesEnabled = NO;
+    set2.drawCubicEnabled = YES;
     set2.drawFilledEnabled = YES;
     set2.fillAlpha = 65/255.0;
     set2.fillColor = kColorInBarViewWithIndex03;//UIColor.redColor;
@@ -182,7 +186,6 @@
     set2.highlightLineWidth = .5;
     set2.highlightLineDashLengths = @[@15.0,@10.0];
     set2.highlightColor = [UIColor blackColor];
-    set2.drawCircleHoleEnabled = NO;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
     [dataSets addObject:set1];

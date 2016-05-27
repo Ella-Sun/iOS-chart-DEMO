@@ -22,6 +22,7 @@ import CoreGraphics
 
 public class ChartColorTemplates: NSObject
 {
+    //TODO: 4
     //TODO: 所有的默认颜色
     public class func liberty () -> [NSUIColor]
     {
@@ -33,9 +34,17 @@ public class ChartColorTemplates: NSObject
             NSUIColor(red: 42/255.0, green: 109/255.0, blue: 130/255.0, alpha: 1.0)
         ]
     }
+    //TODO: 2
     public class func joyful () -> [NSUIColor]
     {
         return [
+            /*
+            NSUIColor(red: 217/255.0, green: 80/255.0, blue: 138/255.0, alpha: 1.0),
+            NSUIColor(red: 254/255.0, green: 149/255.0, blue: 7/255.0, alpha: 1.0),
+            NSUIColor(red: 254/255.0, green: 247/255.0, blue: 120/255.0, alpha: 1.0),
+            NSUIColor(red: 106/255.0, green: 167/255.0, blue: 134/255.0, alpha: 1.0),
+            NSUIColor(red: 53/255.0, green: 194/255.0, blue: 209/255.0, alpha: 1.0)
+ */
             NSUIColor(red: 255/255.0, green: 91/255.0, blue: 0/255.0, alpha: 1.0),
             NSUIColor(red: 244/255.0, green: 63/255.0, blue: 0/255.0, alpha: 1.0),
             NSUIColor(red: 80/255.0, green: 134/255.0, blue: 214/255.0, alpha: 1.0),
@@ -43,6 +52,7 @@ public class ChartColorTemplates: NSObject
             NSUIColor(red: 74/255.0, green: 211/255.0, blue: 221/255.0, alpha: 1.0)
         ]
     }
+    //TODO: 5
     public class func pastel () -> [NSUIColor]
     {
         return [
@@ -53,6 +63,7 @@ public class ChartColorTemplates: NSObject
             NSUIColor(red: 179/255.0, green: 48/255.0, blue: 80/255.0, alpha: 1.0)
         ]
     }
+    //TODO: 3
     public class func colorful () -> [NSUIColor]
     {
         return [
@@ -63,10 +74,18 @@ public class ChartColorTemplates: NSObject
             NSUIColor(red: 179/255.0, green: 100/255.0, blue: 53/255.0, alpha: 1.0)
         ]
     }
+    //TODO: 1
     public class func vordiplom () -> [NSUIColor]
     {
         //TODO: 饼状图
         return [
+            /*
+            NSUIColor(red: 192/255.0, green: 255/255.0, blue: 140/255.0, alpha: 1.0),
+            NSUIColor(red: 255/255.0, green: 247/255.0, blue: 140/255.0, alpha: 1.0),
+            NSUIColor(red: 255/255.0, green: 208/255.0, blue: 140/255.0, alpha: 1.0),
+            NSUIColor(red: 140/255.0, green: 234/255.0, blue: 255/255.0, alpha: 1.0),
+            NSUIColor(red: 255/255.0, green: 140/255.0, blue: 157/255.0, alpha: 1.0)
+ */
             NSUIColor(red: 69/255.0, green: 193/255.0, blue: 51/255.0, alpha: 1.0),
             NSUIColor(red: 117/255.0, green: 211/255.0, blue: 34/255.0, alpha: 1.0),
             NSUIColor(red: 177/255.0, green: 244/255.0, blue: 63/255.0, alpha: 1.0),

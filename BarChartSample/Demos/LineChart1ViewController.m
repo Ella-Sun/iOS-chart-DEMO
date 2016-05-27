@@ -56,8 +56,9 @@
     
     _chartView.dragEnabled = YES;
     [_chartView setScaleEnabled:YES];
-    _chartView.pinchZoomEnabled = YES; // yes的时候x 和 y轴均可缩放
     _chartView.drawGridBackgroundEnabled = NO; // 是否绘制网络背景
+    _chartView.pinchZoomEnabled = YES; // yes的时候x 和 y轴均可缩放
+    
     _chartView.backgroundColor= [UIColor whiteColor];
     
     //X轴上的描述
@@ -65,9 +66,9 @@
     xAxis.labelFont = [UIFont systemFontOfSize:12.f];
     xAxis.labelTextColor = [UIColor blackColor];
 //    xAxis.drawGridLinesEnabled = NO;
-    xAxis.drawAxisLineEnabled = NO;
-    xAxis.spaceBetweenLabels = 1.0;
+//    xAxis.drawAxisLineEnabled = NO;
     xAxis.labelPosition = ChartLimitLabelPositionLeftBottom;
+    xAxis.spaceBetweenLabels = 1.0;
     
     ChartLimitLine *ll1 = [[ChartLimitLine alloc] initWithLimit:0 label:@"Upper Limit"];
     ll1.lineWidth = 2.0;
@@ -89,8 +90,8 @@
     /**<  非常重要 加警戒线  >**/
     leftAxis.drawLimitLinesBehindDataEnabled = YES;
     leftAxis.labelTextColor =[UIColor blackColor];
-    leftAxis.startAtZeroEnabled = NO;
-    leftAxis.drawGridLinesEnabled = NO;
+//    leftAxis.startAtZeroEnabled = NO;
+//    leftAxis.drawGridLinesEnabled = NO;
     
     _chartView.rightAxis.enabled = NO;
     
@@ -128,21 +129,35 @@
 
 - (void)setDataCount:(int)count range:(double)range
 {
+
+    NSArray *dataKnow = @[@12322086.49,
+                          @12310776.49,
+                          @12305500.49,
+                          @12297578.49,
+                          @12303887.49,
+                          @12307186.49];
+    NSMutableArray *newDatas = [NSMutableArray arrayWithArray:dataKnow];
+    NSInteger newCount = newDatas.count;
+    
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < newCount; i++)
     {
         [xVals addObject:[@(i) stringValue]]; // 一共有多少个点
     }
     
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < count; i++)
-    {
-        double mult = (range + 1);
-        double val = (double) (arc4random_uniform(mult)) + 3; // 点的y值
-        [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
+    for (int i = 0; i < newCount; i++) {
+        double value = [newDatas[i] doubleValue]/1000.0;
+        [yVals addObject:[[ChartDataEntry alloc] initWithValue:value xIndex:i]];
     }
+//    for (int i = 0; i < count; i++)
+//    {
+//        double mult = (range + 1);
+//        double val = (double) (arc4random_uniform(mult)) + 3; // 点的y值
+//        [yVals addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:i]];
+//    }
     
     LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet"];
     set1.highlightLineDashLengths = @[@15.f, @10.f]; // 点击后出现水平和竖直虚线长度和间隙长度
@@ -154,7 +169,7 @@
     [set1 setCircleColor:UIColor.whiteColor]; // 拐点点的颜色
     set1.lineWidth = 2.0; // 线宽
     set1.circleRadius = 3.0; // 拐点半径
-//    set1.drawCubicEnabled = YES;
+    set1.drawCubicEnabled = YES;
     set1.drawCircleHoleEnabled = NO; // NO 为实心圆，yes 为空心圆
     set1.valueFont = [UIFont systemFontOfSize:9.f]; // 点上面的值得大小
     set1.fillAlpha = 65/255.0;

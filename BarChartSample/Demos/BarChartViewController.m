@@ -134,6 +134,7 @@
     NSMutableArray * barText1 = [NSMutableArray array];
     NSMutableArray *xVals = [[NSMutableArray alloc] init];
     
+    count = 1;
     for (int i = 0; i < count; i++)
     {
         [xVals addObject:months[i % 12]];

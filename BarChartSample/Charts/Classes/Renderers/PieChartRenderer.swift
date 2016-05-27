@@ -20,7 +20,7 @@ import CoreGraphics
 
 public class PieChartRenderer: ChartDataRendererBase
 {
-    var centerButton: UIButton?
+//    public var centerButton: UIButton?
     public weak var chart: PieChartView?
     
     public init(chart: PieChartView, animator: ChartAnimator?, viewPortHandler: ChartViewPortHandler)
@@ -437,21 +437,28 @@ public class PieChartRenderer: ChartDataRendererBase
                     
                    // 在所画的中间圆上覆盖一个按钮
                     if(centerButton == nil){
-                        centerButton = UIButton(type:UIButtonType.Custom)
-            
+                        
+                        centerButton = YZButton()
+                        
+                        let btnWH : CGFloat = holeRadius * 2
+                        
+                        centerButton!.frame = CGRectMake(center.x - holeRadius, center.y - holeRadius, btnWH, btnWH)
+                        centerButton!.backgroundColor = UIColor.whiteColor()
+                        //                    centerButton!.backgroundColor = UIColor.greenColor()
+                        centerButton?.adjustsImageWhenHighlighted = false
+                        centerButton!.layer.cornerRadius = holeRadius
+                        centerButton!.clipsToBounds = true
+                        centerButton!.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal);
+                        centerButton!.titleLabel!.textAlignment = .Center
+                        centerButton!.titleLabel!.font = UIFont.systemFontOfSize(14)
+                        
+                        //                    centerButton!.titleLabel!.backgroundColor = UIColor.greenColor()
+                        //                    centerButton!.imageView!.backgroundColor = UIColor.redColor()
+                        
+                        centerButton!.addTarget(self, action:Selector("centerBtnDidClicked"), forControlEvents: UIControlEvents.TouchUpInside)
+                        
+                        chart.addSubview(centerButton!)
                     }
-                    let btnWH : CGFloat = holeRadius * 2
-            
-                    centerButton!.frame = CGRectMake(center.x - holeRadius, center.y - holeRadius, btnWH, btnWH)
-                    centerButton!.backgroundColor = UIColor.clearColor()
-//                    centerButton!.backgroundColor = UIColor.greenColor()
-                    centerButton!.layer.cornerRadius = holeRadius
-//                    centerButton!.layer.masksToBounds = true
-                    centerButton!.clipsToBounds = true
-                    
-                    centerButton!.addTarget(self, action:Selector("centerBtnDidClicked"), forControlEvents: UIControlEvents.TouchUpInside)
-                    
-                    chart.addSubview(centerButton!)
                 }
             }
             
@@ -491,6 +498,7 @@ public class PieChartRenderer: ChartDataRendererBase
     //中间按钮的点击事件发出通知
     func centerBtnDidClicked(){
     NSNotificationCenter.defaultCenter().postNotificationName("centerBtnDidClicked", object: nil);
+        
     }
     
     /// draws the description text in the center of the pie chart makes most sense when center-hole is enabled

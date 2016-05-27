@@ -829,7 +829,7 @@ public class PieRadarChartViewBase: ChartViewBase
     /// reference to the last highlighted object
     private var _lastHighlight: ChartHighlight!
     
-    @objc private func tapGestureRecognized(recognizer: NSUITapGestureRecognizer)
+    @objc public func tapGestureRecognized(recognizer: NSUITapGestureRecognizer)
     {
         if (recognizer.state == NSUIGestureRecognizerState.Ended)
         {

@@ -20,6 +20,7 @@ public class BarLineScatterCandleBubbleChartDataSet: ChartDataSet, IBarLineScatt
     // MARK: - Data functions and accessors
     
     // MARK: - Styling functions and accessors
+    //TODO: 画出虚线
     public var highlightColor = NSUIColor(red: 255.0/255.0, green: 187.0/255.0, blue: 115.0/255.0, alpha: 1.0)//orange
     public var highlightLineWidth = CGFloat(0.5)
     public var highlightLineDashPhase = CGFloat(0.0)

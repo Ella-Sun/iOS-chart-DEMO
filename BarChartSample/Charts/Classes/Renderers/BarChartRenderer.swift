@@ -456,7 +456,8 @@ public class BarChartRenderer: ChartDataRendererBase
         
     }
     
-    private var _highlightArrowPtsBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
+//    private var _highlightArrowPtsBuffer = [CGPoint](count: 3, repeatedValue: CGPoint())
+    private var _highlightPointBuffer = CGPoint()
     
     public override func drawHighlighted(context context: CGContext, indices: [ChartHighlight])
     {
@@ -526,10 +527,12 @@ public class BarChartRenderer: ChartDataRendererBase
                 prepareBarHighlight(x: x, y1: y1, y2: y2, barspacehalf: barspaceHalf, trans: trans, rect: &barRect)
                 
                 CGContextFillRect(context, barRect)
+                //TODO: 绘制柱子旁边的箭头
                 if (drawHighlightArrowEnabled)
                 {
                     //TODO: 构建柱子中间的虚线，默认情况下显示虚线
                     CGContextSetStrokeColorWithColor(context, set.highlightColor.CGColor)
+//                    let width : Double = barData.xValAverageLength
                     CGContextSetLineWidth(context, set.highlightLineWidth)
                     
                     if (set.highlightLineDashLengths != nil)
@@ -538,22 +541,39 @@ public class BarChartRenderer: ChartDataRendererBase
                     }
                     else
                     {
-                        CGContextSetLineDash(context, 0.0, [12.0, 10.0], 2)
+                        CGContextSetLineDash(context, 0.0, [12.0, 10.0], 3)
                     }
                     
-                    let yArrow = (y1 >= -y2) ? set.yMax : set.yMin;
+                    let yValue = set.yValForXIndex(index)
+                    if yValue.isNaN {
+                        continue
+                    }
                     
-                    _highlightArrowPtsBuffer[0].x = CGFloat(x)
-                    _highlightArrowPtsBuffer[0].y = CGFloat(yArrow)*1.2
-                    _highlightArrowPtsBuffer[1].x = CGFloat(x)
-                    _highlightArrowPtsBuffer[1].y = 0.0
-                    
-                    trans.pointValuesToPixel(&_highlightArrowPtsBuffer)
-                    
-                    CGContextBeginPath(context)
-                    CGContextMoveToPoint(context, _highlightArrowPtsBuffer[0].x, _highlightArrowPtsBuffer[0].y)
-                    CGContextAddLineToPoint(context, _highlightArrowPtsBuffer[1].x, _highlightArrowPtsBuffer[1].y)
-                    CGContextStrokePath(context)
+                    if y1 >= -y2 {
+                        _highlightPointBuffer.x = CGFloat(x)
+                        _highlightPointBuffer.y = 0
+                        
+                        let trans = dataProvider.getTransformer(set.axisDependency)
+                        
+                        trans.pointValueToPixel(&_highlightPointBuffer)
+                        
+                        CGContextBeginPath(context)
+                        CGContextMoveToPoint(context, _highlightPointBuffer.x, 0)
+                        CGContextAddLineToPoint(context, _highlightPointBuffer.x, _highlightPointBuffer.y)
+                        CGContextStrokePath(context)
+                    } else {
+                        _highlightPointBuffer.x = CGFloat(x)
+                        _highlightPointBuffer.y = 0
+                        
+                        let trans = dataProvider.getTransformer(set.axisDependency)
+                        
+                        trans.pointValueToPixel(&_highlightPointBuffer)
+                        
+                        CGContextBeginPath(context)
+                        CGContextMoveToPoint(context, _highlightPointBuffer.x, viewPortHandler.contentBottom)
+                        CGContextAddLineToPoint(context, _highlightPointBuffer.x, _highlightPointBuffer.y)
+                        CGContextStrokePath(context)
+                    }
                 }
             }
         }

@@ -16,6 +16,7 @@ import CoreGraphics
 
 public class ChartDataRendererBase: ChartRendererBase
 {
+    public var centerButton: YZButton?
     public var animator: ChartAnimator?
     
     public init(animator: ChartAnimator?, viewPortHandler: ChartViewPortHandler)

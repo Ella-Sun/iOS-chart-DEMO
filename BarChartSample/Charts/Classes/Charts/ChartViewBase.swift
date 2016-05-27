@@ -75,7 +75,7 @@ public class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     public var infoTextColor: NSUIColor! = NSUIColor(red: 247.0/255.0, green: 189.0/255.0, blue: 51.0/255.0, alpha: 1.0) // orange
     
     /// description text that appears in the bottom right corner of the chart
-    public var descriptionText = "Description"
+    public var descriptionText = " "
     
     /// if true, units are drawn next to the values in the chart
     internal var _drawUnitInChart = false
@@ -337,7 +337,7 @@ public class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     /// draws the description text in the bottom right corner of the chart
     internal func drawDescription(context context: CGContext)
     {
-        if (descriptionText.characters.count == 0)
+        if (descriptionText.lengthOfBytesUsingEncoding(NSUTF16StringEncoding) == 0)
         {
             return
         }

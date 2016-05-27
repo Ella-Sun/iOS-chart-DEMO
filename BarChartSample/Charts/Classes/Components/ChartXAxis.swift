@@ -26,6 +26,8 @@ public class ChartXAxis: ChartAxisBase
         case TopInside
         case BottomInside
     }
+    //如果是当日折线图界面
+    public var isTodayFluction = Bool(false)
     
     public var values = [String?]()
     
@@ -83,7 +85,8 @@ public class ChartXAxis: ChartAxisBase
     }
     
     /// the position of the x-labels relative to the chart
-    public var labelPosition = XAxisLabelPosition.Top
+    //TODO:改变X轴的默认位置
+    public var labelPosition = XAxisLabelPosition.Bottom
     
     /// if set to true, word wrapping the labels will be enabled.
     /// word wrapping is done using `(value width * labelRotatedWidth)`
