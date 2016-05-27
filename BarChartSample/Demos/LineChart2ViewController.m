@@ -155,7 +155,7 @@
     /**<  是否显示数值  >**/
 //    set1.drawValuesEnabled = NO;
     /**<  折线是曲面还是直线(YES为曲面)  >**/
-//    set1.drawCubicEnabled = YES;
+    set1.drawCubicEnabled = YES;
     /**<  下方是否填充颜色  >**/
     set1.drawFilledEnabled = YES;
     /**<  填充颜色的透明度  >**/
@@ -180,7 +180,7 @@
     set2.drawCubicEnabled = YES;
     set2.drawFilledEnabled = YES;
     set2.fillAlpha = 65/255.0;
-    set2.fillColor = kColorInBarViewWithIndex03;//UIColor.redColor;
+    set2.fillColor = kColorInBarViewWithIndex03;
     
     /**<  移动虚线  >**/
     set2.highlightLineWidth = .5;

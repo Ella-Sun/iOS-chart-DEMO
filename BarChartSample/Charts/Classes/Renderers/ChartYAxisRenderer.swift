@@ -358,7 +358,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
         
         return newText
     }
-    
+
     private var _gridLineBuffer = [CGPoint](count: 2, repeatedValue: CGPoint())
     
     public override func renderGridLines(context context: CGContext)
